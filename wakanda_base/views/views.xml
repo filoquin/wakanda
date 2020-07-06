@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu items -->
+        <menuitem name="Wakanda"
+            id="menu_wakanda_configuration"
+            sequence="9"
+            groups="base.group_user"
+            web_icon="wakanda,static/description/icon.png"/>
+
+        <menuitem id="menu_dashboard"
+            name="Dashboard"
+            sequence="1"
+            parent="wakanda_base.menu_wakanda_configuration"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_search_view_wak" model="ir.ui.view">
+        <field name="name">product.template.search.wak_published</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='consumable']" position="after">
+                <separator/>
+                <filter domain="[('wak_is_published', '=', True)]" name="wak_published" string="Wakanda Published"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="product_template_view_tree_wak_sale">
+        <field name="name">product.template.view.tree.wak_sale</field>
+        <field name="mode">primary</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="replace">
+                <field name="wak_sequence" widget="handle"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="product_template_action_wak" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="view_id" ref="product_template_view_tree_wak_sale"/>
+        <field name="search_view_id" ref="product_template_search_view_wak"/>
+        <field name="context">{'search_default_wak_published': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new product
+            </p><p>
+                A product can be either a physical product or a service that you sell to your customers.
+            </p>
+        </field>
+    </record>
+
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.product.website.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field attrs="{'invisible': [('sale_ok','=',False)]}" name="wak_is_published" widget="boolean_toggle"/>
+            </div>
+        </field>
+    </record>
+</odoo>

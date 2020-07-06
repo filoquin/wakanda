@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wak_app_team" model="crm.team">
+        <field name="name">APP wakanda</field>
+    </record>
+    <record id="wak_ir_module_category" model="ir.module.category">
+        <field name="name">Wakanda</field>
+    </record>
+    <record id="wak_group_revendedor" model="res.groups">
+        <field name="name">Revendedor</field>
+        <field name="category_id" ref="wakanda_base.wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Revendedor</field>
+    </record>
+    <record id="wak_group_comercio" model="res.groups">
+        <field name="name">Comercio</field>
+        <field name="category_id" ref="wakanda_base.wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
+    </record>
+</odoo>
+ 
