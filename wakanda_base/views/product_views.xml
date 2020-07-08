@@ -53,4 +53,5 @@
             </div>
         </field>
     </record>
+    <menuitem id="menu_product_template_wak"  parent="wakanda_base.menu_catalog" action="product_template_action_wak"/>
 </odoo>

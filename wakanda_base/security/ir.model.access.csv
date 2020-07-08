@@ -1,2 +1,4 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_wakanda_base_wakanda_base,wakanda_base.wakanda_base,model_wakanda_base_wakanda_base,base.group_user,1,1,1,1
+"id","name","model_id","group_id","perm_read","perm_write","perm_create","perm_unlink"
+"wakanda_base.ir_model_access_397_53b19a38","wak_promo_admin","wakanda promo","Administración / Ajustes","True","True","True","True"
+"wakanda_base.ir_model_access_396_e77f5d73","wak_fak_admin","wakanda faqs","Administración / Ajustes","True","True","True","True"
+"wakanda_base.ir_model_access_398_cca202cd","sale_order_promo","Sale order promo","Administración / Ajustes","True","True","True","True"

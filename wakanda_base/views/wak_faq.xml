@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wak_faq_tree" model="ir.ui.view">
+        <field name="name">wak_faq.tree</field>
+        <field name="model">wak.faq</field>
+        <field name="arch" type="xml">
+            <tree string="description">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="wak_faq_form" model="ir.ui.view">
+        <field name="name">wak_faq.form</field>
+        <field name="model">wak.faq</field>
+        <field name="arch" type="xml">
+            <form string="description">
+                <header/>
+                <sheet>
+                    <div name="button_box" position="inside">
+                        <widget attrs="{'invisible': [('active', '=', True)]}" bg_color="bg-danger" name="web_ribbon" title="Archived"/>
+                        <field name="active" widget="boolean_toggle"/>
+                    </div>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="sequence"/>
+                        <field name="html"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_wak_faq" model="ir.actions.act_window">
+        <field name="name">FAQS</field>
+        <field name="res_model">wak.faq</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="action_wak_faq" id="wak_faq_menu" parent="wakanda_base.menu_catalog"/>
+</odoo>

@@ -31,11 +31,13 @@
     'depends': ['sale'],
 
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'data/wak_base_data.xml',
         'views/views.xml',
         'views/product_views.xml',
         'views/sale_order.xml',
+        'views/wak_faq.xml',
+        'views/wak_promo.xml',
     ],
     'demo': [
     ],

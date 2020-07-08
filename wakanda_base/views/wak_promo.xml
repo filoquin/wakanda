@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wak_promo_tree" model="ir.ui.view">
+        <field name="name">wak_promo.tree</field>
+        <field name="model">wak.promo</field>
+        <field name="arch" type="xml">
+            <tree string="Promo">
+                <field name="name"/>
+                <field name="from_time"/>
+                <field name="to_time"/>
+            </tree>
+        </field>
+    </record>
+    <record id="wak_promo_form" model="ir.ui.view">
+        <field name="name">wak_promo.form</field>
+        <field name="model">wak.promo</field>
+        <field name="arch" type="xml">
+            <form string="Promo">
+                <header/>
+                <sheet>
+                    <div name="button_box" position="inside">
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+
+                        <field name="active" widget="boolean_toggle"/>
+                    </div>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group col="4">
+                        <field name="from_time"/>
+                        <field name="to_time"/>
+                    </group>
+                    <group string="Rule">
+                        <field name="rule_type"/>
+                        <field name="required_product_ids" widget="many2many_tags"/>
+                        <field name="rule_qty"/>
+                    </group>
+                    <group string="gift">
+                        <field name="gift_product_ids" widget="many2many_tags"/>
+                        <field name="gift_discount"/>
+                        <field name="gift_qty"/>
+                    </group>
+                    <group>
+                        <field name="html"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_wak_promo" model="ir.actions.act_window">
+        <field name="name">Promos</field>
+        <field name="res_model">wak.promo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="action_wak_promo" id="wak_promo_menu" parent="wakanda_base.menu_catalog"/>
+</odoo>

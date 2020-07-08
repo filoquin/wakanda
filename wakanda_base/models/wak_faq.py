@@ -19,4 +19,5 @@ class WakFaq(models.Model):
     )
     active = fields.Boolean(
         string='Active',
+        default=True
     )

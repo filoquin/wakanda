@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="sale_order_promo_form" model="ir.ui.view">
+        <field name="name">ale_order_promo.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="show_promos" invisible="True"/>
+            </field>
+            <xpath expr="//page[@name='order_lines']" position="after">
+                <page attrs="{'invisible':[('show_promos','=',False)]}" name="promo" string="promo">
+                    <field name="promo_line_ids">
+                        <tree editable="top">
+                            <field name="promo_id" readonly="true"/>
+                            <field name="product_qty"/>
+                            <field name="product_id" readonly="true"/>
+                            <field name="discount" readonly="true"/>
+                            <button name="AddPromo" string="Select promo" type="object"/>
+                        </tree>
+                    </field>
+                    <button name="compute_promos" string="promos" type="object"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
     <record id="view_sales_order_filter_wak" model="ir.ui.view">
         <field name="name">sale.order.wak.search.view</field>
         <field name="model">sale.order</field>
