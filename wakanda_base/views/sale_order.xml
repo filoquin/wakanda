@@ -12,10 +12,10 @@
                 <page attrs="{'invisible':[('show_promos','=',False)]}" name="promo" string="promo">
                     <field name="promo_line_ids">
                         <tree editable="top">
-                            <field name="promo_id" readonly="true"/>
+                            <field name="promo_id" readonly="True"/>
                             <field name="product_qty"/>
-                            <field name="product_id" readonly="true"/>
-                            <field name="discount" readonly="true"/>
+                            <field name="product_id" readonly="True"/>
+                            <field name="discount" readonly="True"/>
                             <button name="AddPromo" string="Select promo" type="object"/>
                         </tree>
                     </field>
