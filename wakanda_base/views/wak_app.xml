@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="app">&lt;!DOCTYPE html&gt;<html lang="en">
+			<head>
+				<meta charset="utf-8"/>
+				<title>Wakanda</title>
+				<base href="/app/"/>
+				<meta content="width=device-width, initial-scale=1" name="viewport"/>
+				<link href="/wakanda_base/static/src/wakanda/favicon.ico" rel="icon" type="image/x-icon"/>
+				<meta content="#1976d2" name="theme-color"/>
+				<link href="/wakanda_base/static/src/wakanda/styles.35806a27469be01cf0de.css" rel="stylesheet"/>
+			</head>
+			<body>
+				<app-root></app-root>
+				<noscript>Please enable JavaScript to continue using this application.</noscript>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.8642a15677ee6bc4eeff.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/polyfills.662a9407c687308c74b6.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/scripts.a55bb64091fab5cb8c29.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/main.1835503c06f29a50d595.js"/>
+			</body>
+		</html>
+	</template>
+</odoo>

@@ -1,9 +1,10 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class WakPromo(models.Model):
     _name = 'wak.promo'
     _description = 'wakanda promo'
+    _order = 'sequence'
 
     name = fields.Char(
         string='Title',
@@ -43,9 +44,9 @@ class WakPromo(models.Model):
     )
     rule_type = fields.Selection(
         [
-         ('qty_product', 'qty products'),
-         ('multiple_product', 'multiple qyt of products'),
-         ('amount', 'amount products'),
+            ('qty_product', 'qty products'),
+            ('multiple_product', 'multiple qyt of products'),
+            ('amount', 'amount products'),
         ],
         string='rule type',
         default='qty_product'
@@ -60,3 +61,14 @@ class WakPromo(models.Model):
         column2='product_id',
         string='required product',
     )
+
+    @api.model
+    def list_promos(self):
+        return self.active_promos().read(['name', 'sequence', 'html'])
+
+    @api.returns('wak.promo')
+    def active_promos(self):
+        self.search([
+            ('from_time', '>=', fields.Datetime.Now()),
+            ('to_time', '<=', fields.Datetime.Now())
+        ], order='sequence')

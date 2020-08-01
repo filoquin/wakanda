@@ -37,7 +37,9 @@
         'views/sale_order.xml',
         'views/product_views.xml',
         'views/wak_faq.xml',
+        'views/wak_app.xml',
         'views/wak_promo.xml',
+        'views/product_category.xml',
     ],
     'demo': [
     ],

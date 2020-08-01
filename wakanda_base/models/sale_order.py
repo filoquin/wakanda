@@ -21,8 +21,28 @@ class SaleOrder(models.Model):
         string='Promos',
     )
 
+    @api.model
+    def wkn_create(self, lines):
+        logger.info(lines)
+        order = {
+            'user_id': self.env.user.id,
+            'partner_id': self.env.user.partner_id.id,
+            'pricelist_id': self.env.user.partner_id.property_product_pricelist.id,
+            'wak_order': True,
+            'order_line': [(0, 0, {'product_id': line['id'], 'product_uom_qty': line['qty']}) for line in lines]
+        }
+        order_id = self.create(order)
+        order_id.get_promos()
+
+        return order_id.read(['show_promos', 'promo_line_ids'])
+
     def compute_promos(self):
         self.get_promos()
+
+    def read_promos(self):
+        self.ensure_one()
+        self.get_promos(self)
+        return self.promo_line_ids.read(['promo_id', 'product_qty' 'product_id', 'discount'])
 
     def get_promos(self):
         self.promo_line_ids.unlink()
@@ -81,6 +101,34 @@ class SaleOrder(models.Model):
                 qty += line.qty
             if max_amount < self.total or qty < max_qty:
                 raise UserError(_('Order not has min qty.'))
+
+    def _get_wkn_delivery_methods(self):
+        address = self.partner_shipping_id
+        # searching on website_published will also search for available website (_search method on computed field)
+        return self.env['delivery.carrier'].sudo().search([('is_published', '=', True)]).available_carriers(address)
+
+    def read_delivery_methods(self):
+        carriers = []
+
+        delivery_methods = self._get_wkn_delivery_methods()
+        for delivery_method in delivery_methods:
+            vals = self.carrier_id.rate_shipment(self.id)
+            if vals.get('success'):
+                carrier_tmp = {}
+                carrier_tmp['delivery_message'] = vals.get('warning_message', False)
+                carrier_tmp['delivery_price'] = vals['price']
+                carrier_tmp['display_price'] = vals['carrier_price']
+                carrier_tmp['name'] = delivery_method.display_name
+                carrier_tmp['id'] = delivery_method.id
+
+        return carriers
+
+    def delivery_confirm(self, carrier_id, delivery_price):
+        self.sudo().set_delivery_line(carrier_id, delivery_price)
+        self.sudo().write({
+            'recompute_delivery_price': False,
+            'delivery_message': self.delivery_message,
+        })
 
 
 class SaleOrderPromo(models.Model):

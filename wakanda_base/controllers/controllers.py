@@ -1,21 +1,102 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+import odoo
+from odoo import http
+from odoo.http import request
+from odoo.addons.web.controllers.main import ensure_db
+
+import logging
+_logger = logging.getLogger(__name__)
 
 
-# class WakandaBase(http.Controller):
-#     @http.route('/wakanda_base/wakanda_base/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class WakandaBase(http.Controller):
 
-#     @http.route('/wakanda_base/wakanda_base/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('wakanda_base.listing', {
-#             'root': '/wakanda_base/wakanda_base',
-#             'objects': http.request.env['wakanda_base.wakanda_base'].search([]),
-#         })
+    @http.route(['/wkn/json_logout'], type='json', auth="user")
+    def json_logout(self):
+        request.session.logout()
+        datas = {}
+        datas['login'] = False
+        return datas
 
-#     @http.route('/wakanda_base/wakanda_base/objects/<model("wakanda_base.wakanda_base"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('wakanda_base.object', {
-#             'object': obj
-#         })
+    @http.route('/wkn/json_login', methods=['POST'], type='json', auth="none", csrf=False)
+    def json_login(self,  **post):
+        ensure_db()
+        datas = {}
+        request.params['login_success'] = False
+
+        # Usuario Esta Logueado
+
+        if request.session.uid:
+            request.session.logout()
+            request.params['login_success'] = False
+            data = request.env['res.users'].search_read(
+                [('id', '=', request.session.uid)], ['login', 'name', 'commerce_id'])
+            if len(data):
+                datas['user'] = data[0]
+            datas['login'] = True
+            datas['uid'] = request.session.uid
+            return datas
+
+        if not request.uid:
+            request.uid = odoo.SUPERUSER_ID
+        values = request.params.copy()
+        try:
+            values['databases'] = http.db_list()
+        except odoo.exceptions.AccessDenied:
+            values['databases'] = None
+
+        login = post.get('login', False)
+        password = post.get('password', False)
+        _logger.info(request.session.db)
+        request.session.db = 'wakandaa'
+        if login and password:
+            old_uid = request.uid
+            uid = request.session.authenticate(
+                request.session.db, login, password)
+            if uid is not False:
+                data = request.env['res.users'].search_read(
+                    [('id', '=', uid)], ['login', 'name'])
+                if len(data):
+                    datas['user'] = data[0]
+                request.params['login_success'] = True
+                datas['login'] = True
+                datas['uid'] = uid
+                return datas
+
+            request.uid = old_uid
+            datas['error'] = "Wrong login/password"
+            datas['login'] = False
+        return datas
+
+    def return_raise(self, error):
+        pass
+
+    def check_required_register(self, post_vars):
+        req_post_vars = ['user', 'password', 'completename',
+                         'email', 'phone', 'address', 'day', 'month', 'year']
+        for var in req_post_vars:
+            if var not in post_vars:
+                return "NO estan definidos todos los campos obligatorios"
+        return False
+
+    @http.route('/wkn/json_register', methods=['POST'], type='json', auth="none", csrf=False)
+    def register_user(self, **post_vars):
+        _logger.info(post_vars)
+        datas = {}
+        check = self.check_required_register(post_vars)
+        new_user = request.env['res.users'].with_user(
+            2).wkn_register(post_vars)
+        datas['result'] = {'id': new_user.id,
+                           'msg': 'Su usuario se creo exitosamente'
+                           }
+
+        return datas
+
+    @http.route(
+            ['/app',
+             '/app/<string:dummie>',
+             '/app/<string:dummie>/<string:dummie2>',
+             '/app/<string:dummie>/<string:dummie2>/<string:dummie3>',
+             '/app/<string:dummie>/<string:dummie2>/<string:dummie3>/<string:dummie4>'
+             ], type='http', auth="user")
+    def whopp(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
+        return request.render("wakanda_base.app")

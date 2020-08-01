@@ -6,6 +6,10 @@ class ProductCategory(models.Model):
 
     _inherit = "product.category"
 
+    wkn_publish = fields.Boolean(
+        string='Field Label',
+    )
+
     wkn_categ_id = fields.Many2one(
         'product.category',
         string='Wakanda category',
@@ -13,8 +17,11 @@ class ProductCategory(models.Model):
         inverse='_compute_supply_categ_inverse',
         store=True,
     )
+    wkn_partner_id = fields.Many2one(
+        'res.partner',
+        string='category own',
+    )
 
-    @api.one
     def _compute_supply_categ_inverse(self):
         pass
 
@@ -30,10 +37,7 @@ class ProductCategory(models.Model):
                 if len(parent) and parent.parent_id.id != False:
                     childs.append(parent.parent_id.id)
 
-            if len(childs) > 3:
-                categ.wkn_categ_id = childs[-4]
-
-            elif len(childs) > 2:
+            if len(childs) > 2:
                 categ.wkn_categ_id = childs[-3]
             else:
                 categ.wkn_categ_id = categ.id

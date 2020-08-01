@@ -16,5 +16,13 @@
         <field name="category_id" ref="wakanda_base.wak_ir_module_category"/>
         <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
     </record>
+    <record id="wak_revendedor_price_list" model="product.pricelist">
+        <field name="name">Revendedores</field>
+
+    </record>
+    <record id="wak_final_price_list" model="product.pricelist">
+        <field name="name">Lista Final</field>
+
+    </record>
 </odoo>
  
