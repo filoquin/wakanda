@@ -29,10 +29,10 @@ class WakandaBase(http.Controller):
             request.session.logout()
             request.params['login_success'] = False
             data = request.env['res.users'].search_read(
-                [('id', '=', request.session.uid)], ['login', 'name', 'commerce_id'])
+                [('id', '=', request.session.uid)], ['login', 'name'])
             if len(data):
                 datas['user'] = data[0]
-            datas['login'] = True
+            datas['logirequestn'] = True
             datas['uid'] = request.session.uid
             return datas
 
@@ -85,18 +85,35 @@ class WakandaBase(http.Controller):
         check = self.check_required_register(post_vars)
         new_user = request.env['res.users'].with_user(
             2).wkn_register(post_vars)
-        datas['result'] = {'id': new_user.id,
-                           'msg': 'Su usuario se creo exitosamente'
-                           }
+        if len(new_user):
+            request.env.cr.commit()
+            request.uid = odoo.SUPERUSER_ID
+            _logger.info((request.session.db, post_vars['user'], post_vars['password']))
+            #request.session.db = 'wakandaa'
+            uid = request.session.authenticate(
+                request.session.db, post_vars['user'], post_vars['password'])
+            if uid is not False:
+                data = request.env['res.users'].search_read(
+                    [('id', '=', uid)], ['login', 'name'])
+                if len(data):
+                    datas['user'] = data[0]
+                request.params['login_success'] = True
+                datas['login'] = True
+                datas['uid'] = uid
+                datas['result'] = {'id': new_user.id,
+                                   'msg': 'Su usuario se creo exitosamente'
+                                   }
+
+                return datas
 
         return datas
 
     @http.route(
-            ['/app',
-             '/app/<string:dummie>',
-             '/app/<string:dummie>/<string:dummie2>',
-             '/app/<string:dummie>/<string:dummie2>/<string:dummie3>',
-             '/app/<string:dummie>/<string:dummie2>/<string:dummie3>/<string:dummie4>'
-             ], type='http', auth="user")
+        ['/app',
+         '/app/<string:dummie>',
+         '/app/<string:dummie>/<string:dummie2>',
+         '/app/<string:dummie>/<string:dummie2>/<string:dummie3>',
+         '/app/<string:dummie>/<string:dummie2>/<string:dummie3>/<string:dummie4>'
+         ], type='http', auth="user")
     def whopp(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
         return request.render("wakanda_base.app")
