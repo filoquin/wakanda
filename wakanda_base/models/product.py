@@ -24,7 +24,7 @@ class ProductTemplate(models.Model):
     def _compute_user_price(self):
         prices = self._compute_user_price_no_inverse()
         for template in self:
-            template.final_price = prices.get(template.id, 0.0)
+            template.user_price = prices.get(template.id, 0.0)
 
     def _compute_user_price_no_inverse(self):
         """The _compute_template_price writes the 'list_price' field with an inverse method
@@ -42,7 +42,6 @@ class ProductTemplate(models.Model):
                 self, quantities, partners)
 
         return prices
-
 
     def _compute_final_price(self):
         prices = self._compute_final_price_no_inverse()
