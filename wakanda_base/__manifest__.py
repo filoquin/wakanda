@@ -31,8 +31,8 @@
     'depends': ['sale'],
 
     'data': [
-        'security/ir.model.access.csv',
         'data/wak_base_data.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/sale_order.xml',
         'views/product_views.xml',
