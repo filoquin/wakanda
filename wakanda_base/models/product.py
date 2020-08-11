@@ -11,10 +11,38 @@ class ProductTemplate(models.Model):
         index=True
     )
 
+    user_price = fields.Float(
+        'User Price', compute='_compute_user_price',
+        digits='Product Price'
+    )
+
     final_price = fields.Float(
         'Final Price', compute='_compute_final_price',
         digits='Product Price'
     )
+
+    def _compute_user_price(self):
+        prices = self._compute_user_price_no_inverse()
+        for template in self:
+            template.final_price = prices.get(template.id, 0.0)
+
+    def _compute_user_price_no_inverse(self):
+        """The _compute_template_price writes the 'list_price' field with an inverse method
+        This method allows computing the price without writing the 'list_price'
+        """
+        prices = {}
+        pricelist = self.env.user.partner_id.property_product_pricelist
+        partner = self.env.context.get('partner')
+        quantity = self.env.context.get('quantity', 1.0)
+
+        if pricelist:
+            quantities = [quantity] * len(self)
+            partners = [partner] * len(self)
+            prices = pricelist.get_products_price(
+                self, quantities, partners)
+
+        return prices
+
 
     def _compute_final_price(self):
         prices = self._compute_final_price_no_inverse()
