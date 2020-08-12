@@ -27,7 +27,8 @@ class SaleOrder(models.Model):
         order_line = []
         for line in lines:
             product = self.env['product.template'].browse(line['id'])
-            order_line.append((0, 0, {'product_id': product.product_variant_ids[0].id, 'product_uom_qty': line['qty']}))
+            order_line.append((0, 0, {'product_id': product.product_variant_ids[
+                              0].id, 'product_uom_qty': line['qty']}))
         order = {
             'user_id': self.env.user.id,
             'partner_id': self.env.user.partner_id.id,
@@ -45,8 +46,8 @@ class SaleOrder(models.Model):
 
     def read_promos(self):
         self.ensure_one()
-        self.get_promos(self)
-        return self.promo_line_ids.read(['promo_id', 'product_qty' 'product_id', 'discount'])
+        self.sudo().get_promos()
+        return self.promo_line_ids.read(['promo_id', 'product_qty', 'product_id', 'discount'])
 
     def get_promos(self):
         self.promo_line_ids.unlink()
@@ -65,7 +66,7 @@ class SaleOrder(models.Model):
                 amount = 0.0
                 gift_qty = 0
                 for line in self.order_line:
-                    if line.product_id.id in promo_id.gift_product_ids.ids \
+                    if line.product_id.id in promo_id.required_product_ids.ids \
                             and not len(line.promo_id):
                         qty += line.product_uom_qty
                         amount += line.price_unit
@@ -108,18 +109,21 @@ class SaleOrder(models.Model):
 
     def _get_wkn_delivery_methods(self):
         address = self.partner_shipping_id
-        # searching on website_published will also search for available website (_search method on computed field)
+        # searching on website_published will also search for available website
+        # (_search method on computed field)
         return self.env['delivery.carrier'].sudo().search([('is_published', '=', True)]).available_carriers(address)
 
     def read_delivery_methods(self):
         carriers = []
 
         delivery_methods = self._get_wkn_delivery_methods()
+        return delivery_methods.read(['display_name', 'amount'])
         for delivery_method in delivery_methods:
-            vals = self.carrier_id.rate_shipment(self.id)
+            vals = delivery_method.rate_shipment(self)
             if vals.get('success'):
                 carrier_tmp = {}
-                carrier_tmp['delivery_message'] = vals.get('warning_message', False)
+                carrier_tmp['delivery_message'] = vals.get(
+                    'warning_message', False)
                 carrier_tmp['delivery_price'] = vals['price']
                 carrier_tmp['display_price'] = vals['carrier_price']
                 carrier_tmp['name'] = delivery_method.display_name
@@ -127,11 +131,14 @@ class SaleOrder(models.Model):
 
         return carriers
 
-    def delivery_confirm(self, carrier_id, delivery_price):
+    def wkn_delivery_confirm(self, carrier_id, delivery_price):
+        self.ensure_one()
+
+        carrier_id = self.env['delivery.carrier'].browse(carrier_id)
         self.sudo().set_delivery_line(carrier_id, delivery_price)
         self.sudo().write({
             'recompute_delivery_price': False,
-            'delivery_message': self.delivery_message,
+            # 'delivery_message': self.delivery_message,
         })
 
 
@@ -169,7 +176,12 @@ class SaleOrderPromo(models.Model):
             'discount': self.discount,
         }
         self.env['sale.order.line'].create(line)
-        self.order_id.get_promos()
+        #self.order_id.get_promos()
+
+    def add_promo_read_promos(self):
+        self.ensure_one()
+        self.AddPromo()
+        return self.order_id.read_promos()
 
 
 class SaleOrderLine(models.Model):
