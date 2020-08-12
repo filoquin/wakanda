@@ -24,6 +24,10 @@ class SaleOrder(models.Model):
     @api.model
     def wkn_create(self, lines):
         logger.info(lines)
+        order_line = []
+        for line in lines:
+            product = self.env['product.template'].browse(line['id'])
+            order_line.push((0, 0, {'product_id': product.product_variant_ids[0].id, 'product_uom_qty': line['qty']}))
         order = {
             'user_id': self.env.user.id,
             'partner_id': self.env.user.partner_id.id,
