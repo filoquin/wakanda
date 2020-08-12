@@ -33,7 +33,7 @@ class SaleOrder(models.Model):
             'partner_id': self.env.user.partner_id.id,
             'pricelist_id': self.env.user.partner_id.property_product_pricelist.id,
             'wak_order': True,
-            'order_line': [(0, 0, {'product_id': line['id'], 'product_uom_qty': line['qty']}) for line in lines]
+            'order_line': order_line
         }
         order_id = self.create(order)
         order_id.get_promos()
