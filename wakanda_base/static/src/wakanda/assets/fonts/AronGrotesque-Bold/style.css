@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "AronGrotesque-Bold";
+  src: url("./fonts/AronGrotesque-bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/AronGrotesque-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/AronGrotesque-bold.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/AronGrotesque-bold.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/AronGrotesque-bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/AronGrotesque-bold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/AronGrotesque-bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

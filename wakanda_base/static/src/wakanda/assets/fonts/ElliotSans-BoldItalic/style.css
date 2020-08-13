@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "ElliotSans-BoldItalic";
+  src: url("./fonts/ElliotSans-BoldItalic.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/ElliotSans-BoldItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/ElliotSans-BoldItalic.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/ElliotSans-BoldItalic.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/ElliotSans-BoldItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/ElliotSans-BoldItalic.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/ElliotSans-BoldItalic.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

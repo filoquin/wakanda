@@ -27,7 +27,7 @@ class ResUsers(models.Model):
                 'login': post['user'],
                 'password': post['password'],
                 'partner_id': new_parner.id,
-                'groups_id':[(4, group_revendedor.id), (4, group_public.id)]
+                'groups_id':[(4, group_revendedor.id)]
             }]
         )
         logger.info(new_user)

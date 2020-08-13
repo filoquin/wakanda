@@ -97,14 +97,14 @@ class SaleOrder(models.Model):
 
     def checkTotal(self):
         if self.env.user.has_group('wakanda_base.wak_group_revendedor') or self.env.user.id == 1:
-            max_qty = self.env['ir.config_parameter'].get_param(
+            max_qty = self.env['ir.config_parameter'].sudo().get_param(
                 'max_qty', default=1)
-            max_amount = self.env['ir.config_parameter'].get_param(
+            max_amount = self.env['ir.config_parameter'].sudo().get_param(
                 'max_amount', default=1)
             qty = 0
             for line in self.order_line:
-                qty += line.qty
-            if max_amount < self.total or qty < max_qty:
+                qty += line.product_uom_qty
+            if qty < max_qty:
                 raise UserError(_('Order not has min qty.'))
 
     def _get_wkn_delivery_methods(self):
@@ -134,12 +134,15 @@ class SaleOrder(models.Model):
     def wkn_delivery_confirm(self, carrier_id, delivery_price):
         self.ensure_one()
 
-        carrier_id = self.env['delivery.carrier'].browse(carrier_id)
+        carrier_id = self.env['delivery.carrier'].sudo().browse(carrier_id)
         self.sudo().set_delivery_line(carrier_id, delivery_price)
         self.sudo().write({
             'recompute_delivery_price': False,
             # 'delivery_message': self.delivery_message,
         })
+        self.sudo().action_confirm()
+        logger.info('aca')
+        return True
 
 
 class SaleOrderPromo(models.Model):

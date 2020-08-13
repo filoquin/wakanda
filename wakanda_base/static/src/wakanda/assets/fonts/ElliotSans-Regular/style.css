@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "ElliotSans-Regular";
+  src: url("./fonts/ElliotSans-Regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/ElliotSans-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/ElliotSans-Regular.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/ElliotSans-Regular.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/ElliotSans-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/ElliotSans-Regular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/ElliotSans-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

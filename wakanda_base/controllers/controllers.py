@@ -3,7 +3,7 @@ import odoo
 from odoo import http
 from odoo.http import request
 from odoo.addons.web.controllers.main import ensure_db
-
+import werkzeug
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -88,7 +88,8 @@ class WakandaBase(http.Controller):
         if len(new_user):
             request.env.cr.commit()
             request.uid = odoo.SUPERUSER_ID
-            _logger.info((request.session.db, post_vars['user'], post_vars['password']))
+            _logger.info((request.session.db, post_vars[
+                         'user'], post_vars['password']))
             #request.session.db = 'wakandaa'
             uid = request.session.authenticate(
                 request.session.db, post_vars['user'], post_vars['password'])
@@ -114,6 +115,17 @@ class WakandaBase(http.Controller):
          '/app/<string:dummie>/<string:dummie2>',
          '/app/<string:dummie>/<string:dummie2>/<string:dummie3>',
          '/app/<string:dummie>/<string:dummie2>/<string:dummie3>/<string:dummie4>'
-         ], type='http', auth="user")
+         ], type='http', auth="none")
     def whopp(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
-        return request.render("wakanda_base.app")
+
+        if dummie is None or dummie in ['login', 'products', 'prices', 'faq', 'orders']:
+            return request.render("wakanda_base.app")
+        else:
+            current_url = '/wakanda_base/static/src/wakanda/' + dummie
+            if dummie2:
+                current_url += '/' + dummie2
+            if dummie3:
+                current_url += '/' + dummie3
+            if dummie4:
+                current_url += '/' + dummie4
+            return werkzeug.utils.redirect(current_url)
