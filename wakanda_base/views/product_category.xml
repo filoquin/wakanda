@@ -7,8 +7,8 @@
 		<field name="arch" type="xml">
 			<field name="parent_id" position="after">
 				<field name="wkn_publish"/>
-				<field name="wkn_categ_id"/>
 				<field name="wkn_partner_id"/>
+				<field name="wkn_categ_image" widget="image"/>
 			</field>
 		</field>
 	</record>

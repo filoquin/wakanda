@@ -11,7 +11,7 @@ class WakPublishedMixin(models.AbstractModel):
 
     wak_published = fields.Boolean('Visible on app', related='wak_is_published', readonly=False)
     wak_is_published = fields.Boolean('Is Published in app', copy=False, default=lambda self: self._default_is_published())
-    wak_can_publish = fields.Boolean('Can Publish', compute='_compute_can_publish')
+    wak_can_publish = fields.Boolean('in app', compute='_compute_can_publish')
 
     def _default_is_published(self):
         return True
