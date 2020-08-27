@@ -8,15 +8,15 @@
 				<meta content="width=device-width, initial-scale=0.67" name="viewport"/>
 				<link href="/wakanda_base/static/src/wakanda/favicon.ico" rel="icon" type="image/x-icon"/>
 				<meta content="#1976d2" name="theme-color"/>
-				<link href="/wakanda_base/static/src/wakanda/styles.88ddc2bbbc7bcde419e9.css" rel="stylesheet"/>
+				<link href="/wakanda_base/static/src/wakanda/styles.867b90b0f3e2243c8c8c.css" rel="stylesheet"/>
 			</head>
 			<body >
 				<app-root></app-root>
 				<noscript>Please enable JavaScript to continue using this application.</noscript>
-				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.8db92be1c8d4d8fe8e1d.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.abbcf9a9e0ad98bbce9c.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/polyfills.a4c757a05e085ab6f66d.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/scripts.a55bb64091fab5cb8c29.js"/>
-				<script defer="True" src="/wakanda_base/static/src/wakanda/main.c353839a05ea90164433.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/main.15423be6f9f37b105ba0.js"/>
 			</body>
 		</html>
 	</template>
