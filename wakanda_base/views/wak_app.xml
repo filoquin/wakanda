@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	<template id="app">&lt;!DOCTYPE html&gt;<html lang="es">
+	<template id="app">&lt;!DOCTYPE html&gt;
+		<html lang="es">
 			<head>
 				<meta charset="utf-8"/>
 				<title>Wakanda</title>
 				<base href="/app/"/>
-				<meta content="width=device-width, initial-scale=0.67" name="viewport"/>
+				<meta content="width=device-width, initial-scale=1" name="viewport"/>
 				<link href="/wakanda_base/static/src/wakanda/favicon.ico" rel="icon" type="image/x-icon"/>
 				<meta content="#1976d2" name="theme-color"/>
-				<link href="/wakanda_base/static/src/wakanda/styles.867b90b0f3e2243c8c8c.css" rel="stylesheet"/>
-			</head>
-			<body >
-				<app-root></app-root>
+				<link href="manifest.webmanifest" rel="manifest"/>
+				<link href="/wakanda_base/static/src/wakanda/styles.f9e255f9ee3aab9ec916.css" rel="stylesheet"/></head>
+			<body>
+				<app-root/>
 				<noscript>Please enable JavaScript to continue using this application.</noscript>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.962354264f0841acc99e.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/polyfills.a4c757a05e085ab6f66d.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/scripts.a55bb64091fab5cb8c29.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/main.15423be6f9f37b105ba0.js"/>
-
 			</body>
 		</html>
 	</template>
