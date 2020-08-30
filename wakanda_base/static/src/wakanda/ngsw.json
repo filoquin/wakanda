@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598623517363,
+  "timestamp": 1598795358369,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,21 +11,21 @@
         "ignoreVary": true
       },
       "urls": [
-        "/10.d42d6e4921f4e09a5e10.js",
+        "/10.a96ed0e01702bfba9c3f.js",
         "/5.e5333057d7a21afee1d5.js",
         "/6.025000a1a48dfb0a7937.js",
         "/7.0a3c341ed294cc57537c.js",
-        "/8.acedcd7f122ae2794123.js",
+        "/8.eeecd3b6f5a1235cb1ec.js",
         "/9.af3352c9ae258f420296.js",
         "/common.d32e1cec5add9cd7baf5.js",
         "/favicon.ico",
         "/index.html",
-        "/main.15423be6f9f37b105ba0.js",
+        "/main.32fe30a226fd9a223054.js",
         "/manifest.webmanifest",
         "/polyfills.a4c757a05e085ab6f66d.js",
-        "/runtime.962354264f0841acc99e.js",
+        "/runtime.c5daf61b244465755579.js",
         "/scripts.a55bb64091fab5cb8c29.js",
-        "/styles.f9e255f9ee3aab9ec916.css"
+        "/styles.b11fd685504c6938c587.css"
       ],
       "patterns": []
     },
@@ -309,11 +309,11 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/10.d42d6e4921f4e09a5e10.js": "08747e45608a322a71005d407d82d3f6bdae98c5",
+    "/10.a96ed0e01702bfba9c3f.js": "b41e09a9e4bcfaaba0e2ffa8501e37d5af0c8e29",
     "/5.e5333057d7a21afee1d5.js": "8d355a61895fa5d389e91654debae5cc245b0412",
     "/6.025000a1a48dfb0a7937.js": "db9703cf5bb711ed215e44095725fec18786c2d4",
     "/7.0a3c341ed294cc57537c.js": "dec2a0c19ed3ca232fb48ca937194b0e303156bb",
-    "/8.acedcd7f122ae2794123.js": "2523579e87cfbc8cdffd35f1a2e92d2fa4494008",
+    "/8.eeecd3b6f5a1235cb1ec.js": "de91bb035dbea1410fe2caf3d8e2a183d5133de4",
     "/9.af3352c9ae258f420296.js": "baadfa5caf402af68b94708e271c598b90a00bca",
     "/AronGrotesque-black.0dc05ed14cd4e666791e.svg": "2dbf054e9816bb195b92bbd771d87c366c2d19dd",
     "/AronGrotesque-black.3a6226ab9899be3865cd.ttf": "3fc4ae1425e1e185313c82a87d455fa21820ac06",
@@ -572,24 +572,24 @@
     "/assets/img/main/order.png": "4db5b2de70a63eab046462a34d439be3413226c6",
     "/assets/img/main/prices-org.png": "bfb6cb80a61a8483c990dcb6261a69b1df007bb4",
     "/assets/img/main/prices.png": "52ac00e4e30090b4446418be97df104fbbe3eaa6",
-    "/assets/img/minus.png": "d01003e51479c38db35de99c960fa2310360fdc4",
-    "/assets/img/plus.png": "fd5bbbba686306f9d51bd4bfa4c9ef7b860c14de",
+    "/assets/img/minus.png": "c91ea6532a7dc00b43bc9bbebd1cce01fde030d5",
+    "/assets/img/plus.png": "a9a27177876e5469b9eff8f2ac89effcad97d22b",
     "/assets/img/right-triangle.png": "1f45938159350ce8b1710dbd12c75d23c0a393e2",
     "/bestsellers.6e1bfb4ac7c2e4ae7d4a.png": "977505a4c1639210b74d12249db0de1f86df14b5",
     "/catalog.a744d184c5c110790b4b.png": "dd61635ff3180ac86bfa18c87dc848a72ba35852",
     "/common.d32e1cec5add9cd7baf5.js": "4151eb4512c634d901e30c6dafa8be7cbd482775",
     "/faq.3914cdd114d471115de4.png": "12d36dc617d060c032b1c6a7efb0074df25dc447",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "324ecbde662c54cb73709afe5e4ead0bda6bfae0",
+    "/index.html": "2881e898342f4226ca2f0987c2bff77e685f71da",
     "/location.ca638c586f8a97ea006a.png": "c5d24e0ff4f2e2297fe7b0d15a4e34e5cb321fe0",
-    "/main.15423be6f9f37b105ba0.js": "7bcbbd200ecba3bbc159f7b7ff716f242de44242",
+    "/main.32fe30a226fd9a223054.js": "9cf1792f0e491b0167728f1f12b4cc9fa41b50ee",
     "/manifest.webmanifest": "f8857b53e289cebec7b3ab7a814da1b428a0b0ee",
     "/order.aba8ebc4fc42bc1dd688.png": "4db5b2de70a63eab046462a34d439be3413226c6",
     "/polyfills.a4c757a05e085ab6f66d.js": "99facf9bee8da793cc8401108fb1e1fa7c6c4782",
     "/prices.ea4ec30f5c4e46781af8.png": "52ac00e4e30090b4446418be97df104fbbe3eaa6",
-    "/runtime.962354264f0841acc99e.js": "f73895c73ffa900c3320f09f0663bd0ce54d467c",
+    "/runtime.c5daf61b244465755579.js": "a93a1b289c73e623059f4e2d99c2f392b83ed996",
     "/scripts.a55bb64091fab5cb8c29.js": "9f883c46f4426625c628dd5179b5ad7b9f144c6e",
-    "/styles.f9e255f9ee3aab9ec916.css": "56563bb117d1addb0815045375855feb5398ddc9"
+    "/styles.b11fd685504c6938c587.css": "03a2499c0291908d7f6b70574f7e7f141dd8a88a"
   },
   "navigationUrls": [
     {
