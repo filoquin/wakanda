@@ -108,7 +108,7 @@ class WakandaBase(http.Controller):
 
         return datas
 
-    @http.route('/wkn/new_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
+    @http.route('/wkn/req_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
     def new_confirm_code(self, **post_vars):
         if 'email' in post_vars and post_vars['email']:
             return request.env['res.users'].with_user(2).wkn_send_confirm_code(post_vars)

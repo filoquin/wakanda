@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598924209061,
+  "timestamp": 1599572332748,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,21 +11,21 @@
         "ignoreVary": true
       },
       "urls": [
-        "/10.a96ed0e01702bfba9c3f.js",
-        "/5.e5333057d7a21afee1d5.js",
-        "/6.e26ffee3af209fac632e.js",
-        "/7.0a3c341ed294cc57537c.js",
-        "/8.d189b873bb78602dbbe7.js",
-        "/9.af3352c9ae258f420296.js",
-        "/common.0a6daa277331cd2ddf43.js",
+        "/10.32a2c78ebf7d98f1a455.js",
+        "/5.c3248ad2e90e41f16228.js",
+        "/6.16d491695cfd1cadab8b.js",
+        "/7.ac8af8effc86f80e68fe.js",
+        "/8.75330f790b638a89dc43.js",
+        "/9.cb1a012ed1701b8cb6f7.js",
+        "/common.1cbd068cd2b4a84ae388.js",
         "/favicon.ico",
         "/index.html",
-        "/main.32fe30a226fd9a223054.js",
+        "/main.1e2e30bc9a4af39ff47b.js",
         "/manifest.webmanifest",
         "/polyfills.a4c757a05e085ab6f66d.js",
-        "/runtime.76a9eef3b18d25b08c26.js",
-        "/scripts.a55bb64091fab5cb8c29.js",
-        "/styles.b11fd685504c6938c587.css"
+        "/runtime.4223ee395d551a589f13.js",
+        "/scripts.3e91c0b642823db265d5.js",
+        "/styles.5621d4777366a6eed2e3.css"
       ],
       "patterns": []
     },
@@ -309,12 +309,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/10.a96ed0e01702bfba9c3f.js": "b41e09a9e4bcfaaba0e2ffa8501e37d5af0c8e29",
-    "/5.e5333057d7a21afee1d5.js": "8d355a61895fa5d389e91654debae5cc245b0412",
-    "/6.e26ffee3af209fac632e.js": "80431c7115e90aa33c4eb9dee4feb5be7f7b350d",
-    "/7.0a3c341ed294cc57537c.js": "dec2a0c19ed3ca232fb48ca937194b0e303156bb",
-    "/8.d189b873bb78602dbbe7.js": "0f690a572ada3f914abe512ecc95f3d24ba7deee",
-    "/9.af3352c9ae258f420296.js": "baadfa5caf402af68b94708e271c598b90a00bca",
+    "/10.32a2c78ebf7d98f1a455.js": "b91403b2665fcbab0e62d5c06bb3cc70d43da2e0",
+    "/5.c3248ad2e90e41f16228.js": "ad7fcd998323f088ae7f9ec6c910a940de3e73b8",
+    "/6.16d491695cfd1cadab8b.js": "74a72fa4982a56130966226c1f7c1681f572b1dd",
+    "/7.ac8af8effc86f80e68fe.js": "29c7903fd2d804bd0628f5febf8be1b7d82f49e8",
+    "/8.75330f790b638a89dc43.js": "c74b21105d28f2702c70309e54a905c000084d4f",
+    "/9.cb1a012ed1701b8cb6f7.js": "e877afc1202bd5151bad838df54b0f70430e2d5a",
     "/AronGrotesque-black.0dc05ed14cd4e666791e.svg": "2dbf054e9816bb195b92bbd771d87c366c2d19dd",
     "/AronGrotesque-black.3a6226ab9899be3865cd.ttf": "3fc4ae1425e1e185313c82a87d455fa21820ac06",
     "/AronGrotesque-black.5e743ed71399b61bb769.woff2": "e3acd896b33a0850bcfa42089eb297205bf1bf33",
@@ -577,19 +577,19 @@
     "/assets/img/right-triangle.png": "1f45938159350ce8b1710dbd12c75d23c0a393e2",
     "/bestsellers.6e1bfb4ac7c2e4ae7d4a.png": "977505a4c1639210b74d12249db0de1f86df14b5",
     "/catalog.a744d184c5c110790b4b.png": "dd61635ff3180ac86bfa18c87dc848a72ba35852",
-    "/common.0a6daa277331cd2ddf43.js": "5fc334dfa279033021e2d66d6fea0be79da7398b",
+    "/common.1cbd068cd2b4a84ae388.js": "95f67f8fc225311fa2fd51ba5f311498a88022a9",
     "/faq.3914cdd114d471115de4.png": "12d36dc617d060c032b1c6a7efb0074df25dc447",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "465de33b7f3ebeb5918ddc6611309f43a8c1374b",
+    "/index.html": "b8ad047aa0da4c4a3a42b3914f65e1bfc09b9426",
     "/location.ca638c586f8a97ea006a.png": "c5d24e0ff4f2e2297fe7b0d15a4e34e5cb321fe0",
-    "/main.32fe30a226fd9a223054.js": "9cf1792f0e491b0167728f1f12b4cc9fa41b50ee",
+    "/main.1e2e30bc9a4af39ff47b.js": "46dcd0b85cde551788e93c00b2a05f27839fbc9a",
     "/manifest.webmanifest": "f8857b53e289cebec7b3ab7a814da1b428a0b0ee",
     "/order.aba8ebc4fc42bc1dd688.png": "4db5b2de70a63eab046462a34d439be3413226c6",
     "/polyfills.a4c757a05e085ab6f66d.js": "99facf9bee8da793cc8401108fb1e1fa7c6c4782",
     "/prices.ea4ec30f5c4e46781af8.png": "52ac00e4e30090b4446418be97df104fbbe3eaa6",
-    "/runtime.76a9eef3b18d25b08c26.js": "b8955d23b62b73f7af95528fa5835de69b7311fb",
-    "/scripts.a55bb64091fab5cb8c29.js": "9f883c46f4426625c628dd5179b5ad7b9f144c6e",
-    "/styles.b11fd685504c6938c587.css": "03a2499c0291908d7f6b70574f7e7f141dd8a88a"
+    "/runtime.4223ee395d551a589f13.js": "e8dc497b2da6b115e274afdc18719863d8967678",
+    "/scripts.3e91c0b642823db265d5.js": "14abf70338f8ffd4ae45dab3afd431543b5c844f",
+    "/styles.5621d4777366a6eed2e3.css": "590042b238ce11c56a836c801560e09c0c340f9c"
   },
   "navigationUrls": [
     {
