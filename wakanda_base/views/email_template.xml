@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-		<record id="send_confirm_code" model="email.template">
-			<field name="name">Codigo de confirmacion</field>
-			<field name="model_id" ref="base.model_res_users"/>
-			<field name="subject">Codigo de confirmacion ${object.name}</field>
-			<field name="partner_to"></field>
-			<field name="email_to">${object.partner_id.email}</field>
-			<field name="email_from">consultas@wakanda.com.ar</field>
-			<field eval="True" name="auto_delete"/>
-			<field name="lang">${object.partner_id.lang}</field>
-			<field name="body_html">
-				<![CDATA[
-				<p>Estimado cliente. Utilize este codigo de confirmacion para ingresar a la app.</p>
-				<h2>${object.wkn_confirm_code}</h2>.
-				<p>Muchas Gracias</p>
-        		
-				]]>
-			</field>
-		</record>
-
-	</odoo>
+	<record id="send_confirm_code" model="mail.template">
+		<field name="name">Codigo de confirmacion</field>
+		<field name="model_id" ref="base.model_res_users"/>
+		<field name="subject">Codigo de confirmacion ${object.name}</field>
+		<field name="partner_to"/>
+		<field name="email_to">${object.partner_id.email}</field>
+		<field name="email_from">consultas@wakanda.com.ar</field>
+		<field eval="True" name="auto_delete"/>
+		<field name="lang">${object.partner_id.lang}</field>
+		<field name="body_html">
+			<![CDATA[
+				<p>Estimado cliente. Utilize este codigo de confirmacion para ingresar a la app.</p><h2>${object.wkn_confirm_code}</h2>.
+				<p>Muchas Gracias</p>]]>
+		</field>
+	</record>
+</odoo>
