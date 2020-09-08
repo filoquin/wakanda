@@ -23,7 +23,7 @@ class SaleOrder(models.Model):
 
     @api.model
     def wkn_create(self, lines):
-        logger.info(lines)
+
         order_line = []
         for line in lines:
             product = self.env['product.template'].browse(line['id'])
@@ -37,6 +37,8 @@ class SaleOrder(models.Model):
             'order_line': order_line
         }
         order_id = self.create(order)
+        order_id.checkTotal()
+
         order_id.get_promos()
 
         return order_id.read(['show_promos', 'promo_line_ids'])
@@ -105,7 +107,7 @@ class SaleOrder(models.Model):
             for line in self.order_line:
                 qty += line.product_uom_qty
             if qty < max_qty:
-                raise UserError(_('Order not has min qty.'))
+                raise UserError(_('La orden no tiene la cantidad minima de productos.'))
 
     def _get_wkn_delivery_methods(self):
         address = self.partner_shipping_id

@@ -80,7 +80,6 @@ class WakandaBase(http.Controller):
 
     @http.route('/wkn/json_register', methods=['POST'], type='json', auth="none", csrf=False)
     def register_user(self, **post_vars):
-        _logger.info(post_vars)
         datas = {}
         check = self.check_required_register(post_vars)
         new_user = request.env['res.users'].with_user(
@@ -108,6 +107,45 @@ class WakandaBase(http.Controller):
                 return datas
 
         return datas
+
+    @http.route('/wkn/new_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
+    def new_confirm_code(self, **post_vars):
+        if 'email' in post_vars and post_vars['email']:
+            return request.env['res.users'].with_user(2).wkn_send_confirm_code(post_vars)
+        return False
+
+    @http.route('/wkn/send_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
+    def confirm_confirm_code(self, **post_vars):
+        if 'token' in post_vars and len(post_vars['token']) == 4:
+            partner = request.env['res.partner'].sudo().search([('signup_token', '=', post_vars['token'])])
+            if len(partner):
+                values = {
+                        'login': partner.user_ids[0].login,
+                        'name': partner.name,
+                        'password': post_vars['password'],
+
+                }
+                db, login, password = request.env['res.users'].sudo().signup(values, post_vars['token'])
+                request.env.cr.commit()     # as authenticate will use its own cursor we need to commit the current transaction
+                uid = request.session.authenticate(db, login, password)
+                if not uid:
+                    return False
+                else:
+                    datas = {}
+                    datas['login'] = True
+                    datas['uid'] = uid
+                    datas['result'] = {'id': uid,
+                                       'msg': 'Su password se actualizo exitosamente'
+                                       }
+
+                    return datas
+
+                    #raise SignupError('Authentication Failed.')
+
+                return True
+            else:
+                return False
+        return False
 
     @http.route(
         ['/app',
