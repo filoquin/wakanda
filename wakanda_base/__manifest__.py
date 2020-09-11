@@ -41,6 +41,7 @@
         'views/wak_promo.xml',
         'views/product_category.xml',
         'views/email_template.xml',
+        'views/sale_rank.xml'
     ],
     'demo': [
     ],

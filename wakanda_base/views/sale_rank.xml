@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="sale_rank_tree" model="ir.ui.view">
+		<field name="name">sale_rank.tree</field>
+		<field name="model">sale.rank</field>
+		<field name="arch" type="xml">
+			<tree string="rank">
+				<field name="wkn_categ_id"/>
+				<field name="product_id"/>
+				<field name="product_uom_qty"/>
+				<field name="rank"/>
+			</tree>
+		</field>
+	</record>
+	<record id="sale_rank_search" model="ir.ui.view">
+		<field name="name">sale_rank.search</field>
+		<field name="model">sale.rank</field>
+		<field name="arch" type="xml">
+			<search string="Rank">
+				<field name="wkn_categ_id"/>
+				<field name="product_id"/>
+				<field name="product_uom_qty"/>
+				<field name="rank"/>
+				<filter domain="[('rank','&lt;',6)]" name="first_five" string="first 5"/>
+				<filter domain="[('rank','&lt;',11)]" name="first_ten" string="first 10"/>
+			</search>
+		</field>
+	</record>
+	<record id="action_sale_rank" model="ir.actions.act_window">
+		<field name="name">Sale rank</field>
+		<field name="res_model">sale.rank</field>
+		<field name="view_mode">tree</field>
+		<field name="context">{'search_default_first_five': 1}</field>
+	</record>
+	<record id="ir_cron_sale_rank" model="ir.cron">
+		<field name="name">Update sale rank</field>
+		<field name="model_id" ref="model_sale_rank"/>
+		<field name="state">code</field>
+		<field name="code">model.update_sale_rank()</field>
+		<field eval="True" name="active"/>
+		<field name="user_id" ref="base.user_root"/>
+		<field name="interval_number">1</field>
+		<field name="interval_type">months</field>
+		<field name="numbercall">-1</field>
+		<field eval="False" name="doall"/>
+	</record>
+	<menuitem action="action_sale_rank" id="sale_rank_menu" name="Sale Rank" parent="wakanda_base.menu_catalog"/>
+</odoo>

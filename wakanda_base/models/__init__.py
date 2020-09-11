@@ -6,3 +6,4 @@ from . import wak_faq
 from . import wak_promo
 from . import res_users
 from . import res_partner
+from . import sale_rank

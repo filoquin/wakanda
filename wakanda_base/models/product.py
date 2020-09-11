@@ -9,6 +9,7 @@ class ProductTemplate(models.Model):
     wak_sequence = fields.Integer(
         help="Gives the sequence order when displaying a list of product.",
         index=True
+
     )
 
     user_price = fields.Float(

@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	<record id="product_category_form" model="ir.ui.view">
-		<field name="name">product_category.form</field>
-		<field name="model">product.category</field>
-		<field name="inherit_id" ref="product.product_category_form_view"/>
-		<field name="arch" type="xml">
-			<field name="parent_id" position="after">
-				<field name="wkn_publish"/>
-				<field name="wkn_partner_id"/>
-				<field name="wkn_categ_image" widget="image"/>
-			</field>
-		</field>
-	</record>
-	    <menuitem id="menu_product_template_wak"  parent="wakanda_base.menu_catalog" action="product_template_action_wak"/>
-
-	
+    <record id="product_category_form" model="ir.ui.view">
+        <field name="name">product_category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <group name="first" position="after">
+                <group col="4" name="wkn" string="app">
+                    <field name="wkn_publish"/>
+                    <field name="wkn_partner_id"/>
+                    <field attrs="{'required':[('wkn_publish','=',True)]}" domain="[('categ_id','child_of',id)]" name="price_product_id"/>
+                    <field name="user_price"/>
+                    <field name="final_price"/>
+                    <field name="wkn_categ_image" widget="image"/>
+                    <field attrs="{'invisible':True}" name="id"/>
+                </group>
+            </group>
+        </field>
+    </record>
+    <record id="product_category_search_view_wak" model="ir.ui.view">
+        <field name="name">product.category.search.wak_published</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_search_view"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <separator/>
+                <filter domain="[('wkn_publish', '=', True)]" name="wak_published" string="Wakanda Published"/>
+            </field>
+        </field>
+    </record>
+    <record id="product_category_action_wak" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_wak_published': 1}</field>
+    </record>
+    <menuitem action="product_category_action_wak" id="menu_product_category_wak" parent="wakanda_base.menu_catalog"/>
 </odoo>

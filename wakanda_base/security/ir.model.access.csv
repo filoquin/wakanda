@@ -25,3 +25,5 @@
 "wakanda_base.rev_location","rev_location","stock_account.model_stock_location","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_uom","rev_uom","point_of_sale.model_uom_uom","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_promo","rev_promo","wakanda_base.model_wak_promo","wakanda_base.wak_group_revendedor","True","","",""
+"wakanda_base.rev_sale_rank","sale_rank","wakanda_base.model_sale_rank","wakanda_base.wak_group_revendedor","True","","",""
+"wakanda_base.adm_sale_rank","sale_rank","wakanda_base.model_sale_rank","sales_team.group_sale_salesman_all_leads","True","","",""

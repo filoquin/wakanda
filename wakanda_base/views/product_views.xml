@@ -11,9 +11,7 @@
             </xpath>
         </field>
     </record>
-
-
-    <record model="ir.ui.view" id="product_template_view_tree_wak_sale">
+    <record id="product_template_view_tree_wak_sale" model="ir.ui.view">
         <field name="name">product.template.view.tree.wak_sale</field>
         <field name="mode">primary</field>
         <field name="model">product.template</field>
@@ -24,8 +22,6 @@
             </field>
         </field>
     </record>
-
-
     <record id="product_template_action_wak" model="ir.actions.act_window">
         <field name="name">Products</field>
         <field name="res_model">product.template</field>
@@ -34,15 +30,12 @@
         <field name="search_view_id" ref="product_template_search_view_wak"/>
         <field name="context">{'search_default_wak_published': 1}</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create a new product
-            </p><p>
-                A product can be either a physical product or a service that you sell to your customers.
+            <p class="o_view_nocontent_smiling_face">Create a new product
+            </p>
+            <p>A product can be either a physical product or a service that you sell to your customers.
             </p>
         </field>
     </record>
-
-
     <record id="product_template_form_view" model="ir.ui.view">
         <field name="name">product.template.product.website.form</field>
         <field name="model">product.template</field>
@@ -53,5 +46,5 @@
             </div>
         </field>
     </record>
-    <menuitem id="menu_product_cat_wak"  parent="wakanda_base.menu_catalog" action="product.product_category_action_form"/>
+    <menuitem action="product_template_action_wak" id="menu_product_template_wak" parent="wakanda_base.menu_catalog"/>
 </odoo>
