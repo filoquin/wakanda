@@ -19,6 +19,7 @@ class WakandaBase(http.Controller):
 
     @http.route('/wkn/json_login', methods=['POST'], type='json', auth="none", csrf=False)
     def json_login(self,  **post):
+        request.session.db = 'wakandaa'        
         ensure_db()
         datas = {}
         request.params['login_success'] = False
@@ -46,7 +47,6 @@ class WakandaBase(http.Controller):
 
         login = post.get('login', False)
         password = post.get('password', False)
-        _logger.info(request.session.db)
         request.session.db = 'wakandaa'
         if login and password:
             old_uid = request.uid
@@ -112,7 +112,7 @@ class WakandaBase(http.Controller):
     def new_confirm_code(self, **post_vars):
         if 'email' in post_vars and post_vars['email']:
             return request.env['res.users'].with_user(2).wkn_send_confirm_code(post_vars)
-        return False
+        return {'result': False, 'error': 'El email no esta registrado en nuestro sistema.'}
 
     @http.route('/wkn/send_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
     def confirm_confirm_code(self, **post_vars):
@@ -137,6 +137,10 @@ class WakandaBase(http.Controller):
                     datas['result'] = {'id': uid,
                                        'msg': 'Su password se actualizo exitosamente'
                                        }
+                    data = request.env['res.users'].search_read(
+                        [('id', '=', request.session.uid)], ['login', 'name'])
+                    if len(data):
+                        datas['user'] = data[0]
 
                     return datas
 

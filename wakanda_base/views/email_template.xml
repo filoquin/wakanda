@@ -11,7 +11,7 @@
 		<field name="lang">${object.partner_id.lang}</field>
 		<field name="body_html">
 			<![CDATA[
-				<p>Estimado cliente. Utilize este codigo de confirmacion para ingresar a la app.</p><h2>${object.wkn_confirm_code}</h2>.
+				<p>Estimado cliente. Utilize este codigo de confirmacion para ingresar a la app.</p><h2>${object.partner_id.signup_token}</h2>.
 				<p>Muchas Gracias</p>]]>
 		</field>
 	</record>
