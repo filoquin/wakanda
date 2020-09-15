@@ -11,9 +11,17 @@ class saleRank(models.Model):
         'product.category',
         string='Category',
     )
+    category_name = fields.Char(
+        string='Category name',
+        related='wkn_categ_id.name'
+    )
     product_id = fields.Many2one(
         'product.product',
         string='Product',
+    )
+    name = fields.Char(
+        string='Product name',
+        related="product_id.name"
     )
     product_uom_qty = fields.Float(
         string='qty',
