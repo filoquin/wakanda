@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="wak_catalog_tree" model="ir.ui.view">
+		<field name="name">wak_catalog.tree</field>
+		<field name="model">wak.catalog</field>
+		<field name="arch" type="xml">
+			<tree string="catalog">
+				<field name="name"/>
+				<field name="from_time"/>
+				<field name="to_time"/>
+			</tree>
+		</field>
+	</record>
+	<record id="wak_catalog_form" model="ir.ui.view">
+		<field name="name">wak_catalog.form</field>
+		<field name="model">wak.catalog</field>
+		<field name="arch" type="xml">
+			<form string="description">
+				<header/>
+				<sheet>
+					<h1>
+						<field name="name"/>
+					</h1>
+					<group>
+						<field name="from_time"/>
+						<field name="to_time"/>
+						<field name="images_ids">
+							<tree>
+								<field name="sequence" widget="handle"/>
+								<field name="image" widget="image"/>
+							</tree>
+						</field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="action_wak_catalog_pdf" model="ir.actions.act_window">
+		<field name="name">Catalog</field>
+		<field name="res_model">wak.catalog</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem action="action_wak_catalog_pdf" id="wak_catalog_menu_pdf" parent="wakanda_base.menu_catalog"/>
+</odoo>

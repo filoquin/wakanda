@@ -15,11 +15,12 @@ class WakandaBase(http.Controller):
         request.session.logout()
         datas = {}
         datas['login'] = False
+        request.session.db = 'wakandaa'
         return datas
 
     @http.route('/wkn/json_login', methods=['POST'], type='json', auth="none", csrf=False)
     def json_login(self,  **post):
-        request.session.db = 'wakandaa'        
+        request.session.db = 'wakandaa'
         ensure_db()
         datas = {}
         request.params['login_success'] = False
@@ -117,16 +118,20 @@ class WakandaBase(http.Controller):
     @http.route('/wkn/send_confirm_code', methods=['POST'], type='json', auth="none", csrf=False)
     def confirm_confirm_code(self, **post_vars):
         if 'token' in post_vars and len(post_vars['token']) == 4:
-            partner = request.env['res.partner'].sudo().search([('signup_token', '=', post_vars['token'])])
+            partner = request.env['res.partner'].sudo().search(
+                [('signup_token', '=', post_vars['token'])])
             if len(partner):
                 values = {
-                        'login': partner.user_ids[0].login,
-                        'name': partner.name,
-                        'password': post_vars['password'],
+                    'login': partner.user_ids[0].login,
+                    'name': partner.name,
+                    'password': post_vars['password'],
 
                 }
-                db, login, password = request.env['res.users'].sudo().signup(values, post_vars['token'])
-                request.env.cr.commit()     # as authenticate will use its own cursor we need to commit the current transaction
+                db, login, password = request.env[
+                    'res.users'].sudo().signup(values, post_vars['token'])
+                # as authenticate will use its own cursor we need to commit the
+                # current transaction
+                request.env.cr.commit()
                 uid = request.session.authenticate(db, login, password)
                 if not uid:
                     return False

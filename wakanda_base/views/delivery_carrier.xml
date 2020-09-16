@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_delivery_carrier_form_wakanda_base" model="ir.ui.view">
+		<field name="name">delivery.carrier.website.form</field>
+		<field name="model">delivery.carrier</field>
+		<field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//button[@name='toggle_prod_environment']" position="before">
+				<field name="is_published" widget="boolean_toggle"/>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_delivery_carrier_tree_inherit_wakanda_base" model="ir.ui.view">
+		<field name="name">delivery.carrier.tree.inherit</field>
+		<field name="model">delivery.carrier</field>
+		<field name="inherit_id" ref="delivery.view_delivery_carrier_tree"/>
+		<field name="arch" type="xml">
+			<field name="delivery_type" position="after">
+				<field name="is_published"/>
+			</field>
+		</field>
+	</record>
+	<record id="view_delivery_carrier_search_inherit_wakanda_base" model="ir.ui.view">
+		<field name="name">delivery.carrier.search.inherit</field>
+		<field name="model">delivery.carrier</field>
+		<field name="inherit_id" ref="delivery.view_delivery_carrier_search"/>
+		<field name="arch" type="xml">
+			<filter name="inactive" position="after">
+				<filter domain="[('is_published','=',True)]" name="is_published" string="Published"/>
+			</filter>
+		</field>
+	</record>
+	<menuitem action="delivery.action_delivery_carrier_form" id="menu_wkanda_delivery" name="Shipping Methods" parent="wakanda_base.menu_catalog"/>
+</odoo>

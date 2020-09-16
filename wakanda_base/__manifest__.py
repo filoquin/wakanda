@@ -28,7 +28,7 @@
     'category': 'wakanda',
     'version': '0.1',
 
-    'depends': ['sale'],
+    'depends': ['sale', 'delivery'],
 
     'data': [
         'data/wak_base_data.xml',
@@ -41,7 +41,9 @@
         'views/wak_promo.xml',
         'views/product_category.xml',
         'views/email_template.xml',
-        'views/sale_rank.xml'
+        'views/sale_rank.xml',
+        'views/delivery_carrier.xml',
+        'views/wak_catalog.xml',
     ],
     'demo': [
     ],

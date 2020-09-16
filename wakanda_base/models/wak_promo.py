@@ -68,7 +68,7 @@ class WakPromo(models.Model):
 
     @api.returns('wak.promo')
     def active_promos(self):
-        self.search([
-            ('from_time', '>=', fields.Datetime.Now()),
-            ('to_time', '<=', fields.Datetime.Now())
+        return self.search([
+            ('from_time', '<=', fields.Datetime.now()),
+            ('to_time', '>=', fields.Datetime.now())
         ], order='sequence')
