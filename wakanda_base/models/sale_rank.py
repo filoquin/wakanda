@@ -40,7 +40,7 @@ class saleRank(models.Model):
             CREATE MATERIALIZED VIEW %s AS (
                select pc.wkn_main_categ_id as wkn_categ_id, pp.id,
                       pp.id as product_id, sum(l.product_uom_qty) as product_uom_qty,
-                      rank() OVER (PARTITION BY pc.wkn_categ_id ORDER BY sum(l.product_uom_qty) ASC)
+                      rank() OVER (PARTITION BY pc.wkn_main_categ_id ORDER BY sum(l.product_uom_qty) ASC)
                 FROM product_product pp
                 join product_template pt on pp.product_tmpl_id = pt.id
                 Join sale_order_line l on l.product_id = pp.id
@@ -50,7 +50,7 @@ class saleRank(models.Model):
                     and date_order < date_trunc('month', current_date)
                     and so.state not in ('draft','cancel')
                     and pt.type = 'product'
-                group by pp.id,pc.wkn_categ_id
+                group by pp.id,pc.wkn_main_categ_id
 
             )
         """ % self._table
