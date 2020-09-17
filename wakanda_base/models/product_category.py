@@ -10,7 +10,7 @@ class ProductCategory(models.Model):
         string='Publish',
     )
 
-    wkn_categ_id = fields.Many2one(
+    wkn_main_categ_id = fields.Many2one(
         'product.category',
         string='Wakanda category',
         compute='_compute_supply_categ',
@@ -58,7 +58,7 @@ class ProductCategory(models.Model):
                 if len(parent) and parent.parent_id.id != False:
                     childs.append(parent.parent_id.id)
 
-            if len(childs) > 2:
-                categ.wkn_categ_id = childs[-3]
+            if len(childs) > 1:
+                categ.wkn_main_categ_id = childs[2]
             else:
-                categ.wkn_categ_id = categ.id
+                categ.wkn_main_categ_id = categ.id

@@ -38,7 +38,7 @@ class saleRank(models.Model):
 
         query = """
             CREATE MATERIALIZED VIEW %s AS (
-               select pc.wkn_categ_id as wkn_categ_id, pp.id,
+               select pc.wkn_main_categ_id as wkn_categ_id, pp.id,
                       pp.id as product_id, sum(l.product_uom_qty) as product_uom_qty,
                       rank() OVER (PARTITION BY pc.wkn_categ_id ORDER BY sum(l.product_uom_qty) ASC)
                 FROM product_product pp
