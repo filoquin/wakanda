@@ -5,15 +5,15 @@ class saleRank(models.Model):
     _name = 'sale.rank'
     _description = 'Sale Rank'
     _auto = False
-    _order = 'wkn_categ_id asc,rank asc'
+    _order = 'wkn_app_categ_id asc,rank asc'
 
-    wkn_categ_id = fields.Many2one(
+    wkn_app_categ_id = fields.Many2one(
         'product.category',
         string='Category',
     )
     category_name = fields.Char(
         string='Category name',
-        related='wkn_categ_id.name'
+        related='wkn_app_categ_id.name'
     )
     product_id = fields.Many2one(
         'product.product',
@@ -38,9 +38,9 @@ class saleRank(models.Model):
 
         query = """
             CREATE MATERIALIZED VIEW %s AS (
-               select pc.wkn_main_categ_id as wkn_categ_id, pp.id,
+               select pc.wkn_app_categ_id as wkn_app_categ_id, pp.id,
                       pp.id as product_id, sum(l.product_uom_qty) as product_uom_qty,
-                      rank() OVER (PARTITION BY pc.wkn_main_categ_id ORDER BY sum(l.product_uom_qty) ASC)
+                      rank() OVER (PARTITION BY pc.wkn_app_categ_id ORDER BY sum(l.product_uom_qty) ASC)
                 FROM product_product pp
                 join product_template pt on pp.product_tmpl_id = pt.id
                 Join sale_order_line l on l.product_id = pp.id
@@ -50,7 +50,7 @@ class saleRank(models.Model):
                     and date_order < date_trunc('month', current_date)
                     and so.state not in ('draft','cancel')
                     and pt.type = 'product'
-                group by pp.id,pc.wkn_main_categ_id
+                group by pp.id,pc.wkn_app_categ_id
 
             )
         """ % self._table

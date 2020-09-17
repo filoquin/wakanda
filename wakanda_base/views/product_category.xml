@@ -9,7 +9,7 @@
                 <group col="4" name="wkn" string="app">
                     <field name="wkn_publish"/>
                     <field name="wkn_partner_id"/>
-                    <field name="wkn_main_categ_id"/>
+                    <field name="wkn_app_categ_id"/>
                     <field attrs="{'required':[('wkn_publish','=',True)]}" domain="[('categ_id','child_of',id)]" name="price_product_id"/>
                     <field name="user_price"/>
                     <field name="final_price"/>
