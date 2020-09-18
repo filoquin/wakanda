@@ -100,7 +100,7 @@ class SaleOrder(models.Model):
     def checkTotal(self):
         if self.env.user.has_group('wakanda_base.wak_group_revendedor') or self.env.user.id == 1:
             max_qty = self.env['ir.config_parameter'].sudo().get_param(
-                'max_qty', default=1)
+                'max_qty', default=20)
             max_amount = self.env['ir.config_parameter'].sudo().get_param(
                 'max_amount', default=1)
             qty = 0
