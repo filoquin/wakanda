@@ -13,5 +13,10 @@
             sequence="1"
             parent="wakanda_base.menu_wakanda_configuration"/>
 
+        <menuitem id="menu_wakanda_features"
+            name="Features"
+            sequence="80"
+            parent="wakanda_base.menu_wakanda_configuration"/>
+
     </data>
 </odoo>

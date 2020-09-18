@@ -33,3 +33,5 @@
 "wakanda_base.rev_wak_catalog","rev_wak_catalog","wakanda_base.model_wak_catalog","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.adm_wak_catalog_images","wak_catalog_images","wakanda_base.model_wak_catalog_images","sales_team.group_sale_salesman_all_leads","True","True","True","True"
 "wakanda_base.rev_wak_catalog_images","rev_wak_catalog_images","wakanda_base.model_wak_catalog_images","wakanda_base.wak_group_revendedor","True","","",""
+"wakanda_base.admin_promo","admin_promo","wakanda_base.model_wak_promo","sales_team.group_sale_salesman_all_leads","True","True","True","True"
+"wakanda_base.adm_sale_stat","sale_stat","wakanda_base.model_sale_stat","sales_team.group_sale_salesman_all_leads","True","","",""

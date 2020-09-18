@@ -40,5 +40,5 @@
 		<field name="res_model">wak.catalog</field>
 		<field name="view_mode">tree,form</field>
 	</record>
-	<menuitem action="action_wak_catalog_pdf" id="wak_catalog_menu_pdf" parent="wakanda_base.menu_catalog"/>
+	<menuitem action="action_wak_catalog_pdf" id="wak_catalog_menu_pdf" parent="wakanda_base.menu_wakanda_features"/>
 </odoo>

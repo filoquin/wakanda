@@ -30,5 +30,5 @@
 			</filter>
 		</field>
 	</record>
-	<menuitem action="delivery.action_delivery_carrier_form" id="menu_wkanda_delivery" name="Shipping Methods" parent="wakanda_base.menu_catalog"/>
+	<menuitem action="delivery.action_delivery_carrier_form" id="menu_wkanda_delivery" name="Shipping Methods" parent="wakanda_base.menu_wakanda_features"/>
 </odoo>

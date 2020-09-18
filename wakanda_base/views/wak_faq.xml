@@ -37,5 +37,5 @@
         <field name="res_model">wak.faq</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem action="action_wak_faq" id="wak_faq_menu" parent="wakanda_base.menu_catalog"/>
+    <menuitem action="action_wak_faq" id="wak_faq_menu" parent="wakanda_base.menu_wakanda_features"/>
 </odoo>

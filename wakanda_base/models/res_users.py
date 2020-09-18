@@ -27,6 +27,7 @@ class ResUsers(models.Model):
     def wkn_my_profile(self):
         user_id = self.env.user
         profile = {
+            'partner_id': user_id.partner_id.id,
             'name': user_id.partner_id.name,
             'email': user_id.partner_id.email,
             'phone': user_id.partner_id.phone,

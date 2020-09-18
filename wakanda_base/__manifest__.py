@@ -33,6 +33,7 @@
     'data': [
         'data/wak_base_data.xml',
         'security/ir.model.access.csv',
+        'security/ir.rule.csv',
         'views/views.xml',
         'views/sale_order.xml',
         'views/product_views.xml',
