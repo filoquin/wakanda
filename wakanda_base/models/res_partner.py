@@ -46,3 +46,7 @@ class ResPartner(models.Model):
         string='Stat',
         auto_join=True
     )
+
+    know_us = fields.Text(
+        string='How did you know us',
+    )

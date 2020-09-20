@@ -38,3 +38,4 @@
 "wakanda_base.rev_pricelist","rev_pricelist","product.model_product_pricelist","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_pricelist_item","rev_pricelist_item","product.model_product_pricelist_item","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_attribute_line","rev_attribute_line","product.model_product_template_attribute_line","wakanda_base.wak_group_revendedor","True","","",""
+"wakanda_base.rev_partner","Partner","base.model_res_partner","wakanda_base.wak_group_revendedor","True","True","False","False"

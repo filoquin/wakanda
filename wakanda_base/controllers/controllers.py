@@ -180,3 +180,9 @@ class WakandaBase(http.Controller):
             if dummie4:
                 current_url += '/' + dummie4
             return werkzeug.utils.redirect(current_url)
+
+    @http.route('/wkn/states',  auth="none", csrf=False)
+    def get_states(self, **post_vars):
+        states_ids = request.env['res.country.state'].with_user(2).search_read([('country_id.code', '=', 'AR')], ['name'])
+        _logger.info('states_ids %r' % states_ids)
+        return str(states_ids)

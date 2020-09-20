@@ -42,6 +42,9 @@ class ProductCategory(models.Model):
         related='price_product_id.final_price',
         digits='Product Price'
     )
+    wkn_description = fields.Char(
+        string='Description',
+    )
 
     def _compute_supply_categ_inverse(self):
         pass

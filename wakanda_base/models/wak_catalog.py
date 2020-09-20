@@ -39,7 +39,7 @@ class WakCatalog(models.Model):
         if len(catalog_id):
             catalog = catalog_id.read(['name'])
 
-            catalog[0]['pdf'] = catalog_id.attachment_ids.read([])
+            catalog[0]['pdf'] = catalog_id.sudo().attachment_ids.read([])
             catalog[0]['images'] = catalog_id.images_ids.read(['image'])
             return catalog
 

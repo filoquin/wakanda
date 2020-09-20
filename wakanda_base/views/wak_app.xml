@@ -14,10 +14,10 @@
 			<body>
 				<app-root/>
 				<noscript>Please enable JavaScript to continue using this application.</noscript>
-				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.2ed6dddbca31e4d93a8c.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.1769633cd33304003334.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/polyfills.c6e2a6493444a02edd2b.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/scripts.3e91c0b642823db265d5.js"/>
-				<script defer="True" src="/wakanda_base/static/src/wakanda/main.e015ad06c8298dbbe79a.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/main.6437b3c68844f043e7da.js"/>
 			</body>
 		</html>
 	</template>

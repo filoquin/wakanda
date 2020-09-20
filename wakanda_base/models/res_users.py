@@ -36,6 +36,11 @@ class ResUsers(models.Model):
             'order_count': 0,
             'amount_total': 0,
         }
+        if user_id.partner_id.birthdate_date:
+            profile['year'] = user_id.partner_id.birthdate_date.year
+            profile['month'] = user_id.partner_id.birthdate_date.month
+            profile['day'] = user_id.partner_id.birthdate_date.day
+
         if len(user_id.partner_id.stats_ids):
             profile['product_uom_qty'] = user_id.partner_id.stats_ids[
                 0]['product_uom_qty']
@@ -66,7 +71,7 @@ class ResUsers(models.Model):
             return False
 
     def wkn_register(self, post):
-        birtdate = "%s-%s-%s" % (post['year'], post['month'], post['day'])
+        birthdate = "%s-%s-%s" % (post['year'], post['month'], post['day'])
         group_revendedor = self.env.ref('wakanda_base.wak_group_revendedor')
         group_public = self.env.ref('base.group_public')
         token = self.get_token()
@@ -75,7 +80,10 @@ class ResUsers(models.Model):
             [{'name':  post['completename'],
               'email':   post['email'],
               'phone': post['phone'],
-              'street': post['address']
+              'street': post['address'],
+              'birthdate_date':birthdate,
+              'state_id':post['state_id'],
+              'know_us':post['know_us'],
               }]
         )
         new_user = self.with_context(mail_create_nosubscribe=True).create(

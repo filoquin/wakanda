@@ -1,2 +1,3 @@
 "id","name","model_id/id","groups/id","domain_force","perm_read","perm_write","perm_create","perm_unlink"
 "wakanda_base.mis_ordenes","mis ordenes","sale.model_sale_order","wakanda_base.wak_group_comercio,wakanda_base.wak_group_revendedor","[('partner_id','=',user.partner_id.id)]","True","True","True",""
+"wakanda_base.mis_partner","mis partner","base.model_res_partner","wakanda_base.wak_group_comercio,wakanda_base.wak_group_revendedor","[('id','=',user.partner_id.id)]","True","True","True",""

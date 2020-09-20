@@ -28,7 +28,7 @@
     'category': 'wakanda',
     'version': '0.1',
 
-    'depends': ['sale', 'delivery'],
+    'depends': ['sale', 'delivery', 'partner_contact_birthdate'],
 
     'data': [
         'data/wak_base_data.xml',
