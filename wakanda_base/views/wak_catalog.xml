@@ -24,6 +24,7 @@
 					<group>
 						<field name="from_time"/>
 						<field name="to_time"/>
+						<field name="link"/>
 						<field name="images_ids">
 							<tree>
 								<field name="sequence" widget="handle"/>

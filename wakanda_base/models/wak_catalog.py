@@ -26,6 +26,9 @@ class WakCatalog(models.Model):
         domain=[('res_model', '=', _name)],
         string='PDF'
     )
+    link = fields.Char(
+        string='PDF Link',
+    )
 
     images_ids = fields.One2many(
         'wak.catalog.images',
@@ -37,9 +40,9 @@ class WakCatalog(models.Model):
     def list_catalog(self):
         catalog_id = self.active_catalog()
         if len(catalog_id):
-            catalog = catalog_id.read(['name'])
+            catalog = catalog_id.read(['name', 'link'])
 
-            catalog[0]['pdf'] = catalog_id.sudo().attachment_ids.read([])
+            #catalog[0]['pdf'] = catalog_id.sudo().attachment_ids.read([])
             catalog[0]['images'] = catalog_id.images_ids.read(['image'])
             return catalog
 
