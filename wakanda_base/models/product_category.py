@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class ProductCategory(models.Model):
 
     _inherit = "product.category"
-
+    _order = "sequence asc"
     wkn_publish = fields.Boolean(
         string='Publish',
     )
@@ -44,6 +44,9 @@ class ProductCategory(models.Model):
     )
     wkn_description = fields.Char(
         string='Description',
+    )
+    sequence = fields.Integer(
+        string='sequence',
     )
 
     def _compute_supply_categ_inverse(self):
