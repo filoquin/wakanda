@@ -1,5 +1,5 @@
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from math import floor
 
 import logging
@@ -98,7 +98,7 @@ class SaleOrder(models.Model):
         return res
 
     def checkTotal(self):
-        if self.env.user.has_group('wakanda_base.wak_group_revendedor') or self.env.user.id == 1:
+        if self.env.user.has_group('wakanda_base.wak_group_revendedor') or self.env.user.id == 2:
             max_qty = self.env['ir.config_parameter'].sudo().get_param(
                 'max_qty', default=20)
             max_amount = self.env['ir.config_parameter'].sudo().get_param(
@@ -106,8 +106,8 @@ class SaleOrder(models.Model):
             qty = 0
             for line in self.order_line:
                 qty += line.product_uom_qty
-            if qty < max_qty:
-                raise UserError(_('La orden no tiene la cantidad minima de productos.'))
+            if qty < int(max_qty):
+                raise ValidationError(_('La orden no tiene la cantidad minima de productos.'))
 
     def _get_wkn_delivery_methods(self):
         address = self.partner_shipping_id

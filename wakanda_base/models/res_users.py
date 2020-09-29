@@ -30,6 +30,7 @@ class ResUsers(models.Model):
             'partner_id': user_id.partner_id.id,
             'name': user_id.partner_id.name,
             'email': user_id.partner_id.email,
+            'image': user_id.partner_id.image_256,
             'phone': user_id.partner_id.phone,
             'street': user_id.partner_id.street,
             'product_uom_qty': 0,
