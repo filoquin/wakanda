@@ -26,11 +26,13 @@ class ResUsers(models.Model):
     @api.model
     def wkn_my_profile(self):
         user_id = self.env.user
+        image = image_data_uri(
+            user_id.partner_id.image_256) if user_id.partner_id.image_256 else ''
         profile = {
             'partner_id': user_id.partner_id.id,
             'name': user_id.partner_id.name,
             'email': user_id.partner_id.email,
-            'image': image_data_uri(user_id.partner_id.image_256),
+            'image': image,
             'phone': user_id.partner_id.phone,
             'street': user_id.partner_id.street,
             'product_uom_qty': 0,
