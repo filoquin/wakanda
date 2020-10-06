@@ -22,8 +22,9 @@ class SaleOrder(models.Model):
     )
 
     @api.model
-    def wkn_create(self, lines):
-
+    def wkn_create(self, lines, coupon_code=False):
+        logger.info("lines %r" %lines)
+        logger.info("coupon_code %r" %coupon_code)
         order_line = []
         for line in lines:
             product = self.env['product.template'].browse(line['id'])
@@ -38,10 +39,46 @@ class SaleOrder(models.Model):
         }
         order_id = self.create(order)
         order_id.checkTotal()
-
+        if (coupon_code):
+            res = self.wkn_apply_coupon(order_id, coupon_code)
+            if 'not_found' in res:
+                raise ValidationError(_('El codigo es incorrecto.'))
         order_id.get_promos()
+        order_id.recompute_coupon_lines()
 
         return order_id.read(['show_promos', 'promo_line_ids'])
+
+    @api.model
+    def wkn_apply_coupon(self, order, coupon_code):
+        error_status = {}
+        program = self.env['sale.coupon.program'].search([('promo_code', '=', coupon_code)])
+        if program:
+            error_status = program._check_promo_code(order, coupon_code)
+            if not error_status:
+                if program.promo_applicability == 'on_next_order':
+                    # Avoid creating the coupon if it already exist
+                    if program.discount_line_product_id.id not in order.generated_coupon_ids.filtered(lambda coupon: coupon.state in ['new', 'reserved']).mapped('discount_line_product_id').ids:
+                        coupon = order._create_reward_coupon(program)
+                        return {
+                            'generated_coupon': {
+                                'reward': coupon.program_id.discount_line_product_id.name,
+                                'code': coupon.code,
+                            }
+                        }
+                else:  # The program is applied on this order
+                    order._create_reward_line(program)
+                    order.code_promo_program_id = program
+        else:
+            coupon = self.env['sale.coupon'].search([('code', '=', coupon_code)], limit=1)
+            if coupon:
+                error_status = coupon._check_coupon_code(order)
+                if not error_status:
+                    order._create_reward_line(coupon.program_id)
+                    order.applied_coupon_ids += coupon
+                    coupon.write({'state': 'used'})
+            else:
+                error_status = {'not_found': _('The code %s is invalid') % (coupon_code)}
+        return error_status
 
     def compute_promos(self):
         self.get_promos()
