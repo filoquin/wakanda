@@ -39,7 +39,7 @@ class SaleOrder(models.Model):
         }
         order_id = self.create(order)
         order_id.checkTotal()
-        if (coupon_code):
+        if coupon_code and len(coupon_code):
             res = self.wkn_apply_coupon(order_id, coupon_code)
             if 'not_found' in res:
                 raise ValidationError(_('El codigo es incorrecto.'))
