@@ -43,7 +43,7 @@ class SaleOrder(models.Model):
             res = self.wkn_apply_coupon(order_id, coupon_code)
             if 'not_found' in res:
                 raise ValidationError(_('El codigo es incorrecto.'))
-        order_id.get_promos()
+        order_id.sudo().get_promos()
         order_id.recompute_coupon_lines()
 
         return order_id.read(['show_promos', 'promo_line_ids'])

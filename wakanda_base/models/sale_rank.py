@@ -89,7 +89,9 @@ class saleStat(models.Model):
     rank = fields.Integer(
         string='Rank',
     )
-
+    amount = fields.Float(
+        string='Amount',
+    )
 
     def init(self):
         self._cr.execute('DROP VIEW IF EXISTS %s' % self._table)
@@ -97,7 +99,7 @@ class saleStat(models.Model):
         query = """
             CREATE  VIEW %s AS (
                select pc.wkn_app_categ_id as wkn_app_categ_id, pp.id, apc.name as category_name,
-                      pp.id as product_id, sum(l.product_uom_qty) as product_uom_qty,date_trunc('month',date_order)::date as month,
+                      pp.id as product_id, sum(l.product_uom_qty) as product_uom_qty,sum(l.price_total) as amount,date_trunc('month',date_order)::date as month,
                       rank() OVER (PARTITION BY pc.wkn_app_categ_id , date_trunc('month',date_order)::date ORDER BY sum(l.product_uom_qty) ASC)
                 FROM product_product pp
                 join product_template pt on pp.product_tmpl_id = pt.id
