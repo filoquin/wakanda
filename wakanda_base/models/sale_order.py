@@ -209,7 +209,7 @@ class SaleOrderPromo(models.Model):
 
     def AddPromo(self, count=False):
         self.ensure_one()
-        product_uom_qty = count if count else self.product_uom_qty
+        product_uom_qty = count if count else self.product_qty
         line = {
             'name': ':::PROMO::: %s' % self.product_id.display_name,
             'product_id': self.product_id.id,
