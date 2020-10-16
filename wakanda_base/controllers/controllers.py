@@ -172,7 +172,7 @@ class WakandaBase(http.Controller):
         if dummie is None or dummie in ['login', 'products', 'prices', 'faq', 'orders']:
             return request.render("wakanda_base.app")
         else:
-            current_url = '/wakanda_base/static/src/wakanda/' + dummie
+            current_url = 'https://app.wakanda.com.ar/wakanda_base/static/src/wakanda/' + dummie
             if dummie2:
                 current_url += '/' + dummie2
             if dummie3:

@@ -221,7 +221,7 @@ class SaleOrderPromo(models.Model):
         self.env['sale.order.line'].create(line)
         #self.order_id.get_promos()
 
-    def add_promo_read_promos(self, count):
+    def add_promo_read_promos(self, count= False):
         self.ensure_one()
         self.AddPromo(count)
         return self.order_id.read_promos()
