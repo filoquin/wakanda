@@ -207,12 +207,13 @@ class SaleOrderPromo(models.Model):
         string='Discount',
     )
 
-    def AddPromo(self):
+    def AddPromo(self, count=False):
         self.ensure_one()
+        product_uom_qty = count if count else self.product_uom_qty
         line = {
             'name': ':::PROMO::: %s' % self.product_id.display_name,
             'product_id': self.product_id.id,
-            'product_uom_qty': self.product_qty,
+            'product_uom_qty': product_uom_qty,
             'order_id': self.order_id.id,
             'promo_id': self.promo_id.id,
             'discount': self.discount,
@@ -220,9 +221,9 @@ class SaleOrderPromo(models.Model):
         self.env['sale.order.line'].create(line)
         #self.order_id.get_promos()
 
-    def add_promo_read_promos(self):
+    def add_promo_read_promos(self, count):
         self.ensure_one()
-        self.AddPromo()
+        self.AddPromo(count)
         return self.order_id.read_promos()
 
 
