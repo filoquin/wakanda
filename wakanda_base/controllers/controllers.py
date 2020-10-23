@@ -167,12 +167,13 @@ class WakandaBase(http.Controller):
          '/app/<string:dummie>/<string:dummie2>/<string:dummie3>',
          '/app/<string:dummie>/<string:dummie2>/<string:dummie3>/<string:dummie4>'
          ], type='http', auth="none")
-    def whopp(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
+    def app(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
 
         if dummie is None or dummie in ['login', 'products', 'prices', 'faq', 'orders']:
             return request.render("wakanda_base.app")
         else:
             current_url = 'https://app.wakanda.com.ar/wakanda_base/static/src/wakanda/' + dummie
+            #current_url = '/wakanda_base/static/src/wakanda/' + dummie
             if dummie2:
                 current_url += '/' + dummie2
             if dummie3:

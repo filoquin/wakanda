@@ -180,6 +180,7 @@ class SaleOrder(models.Model):
             # 'delivery_message': self.delivery_message,
         })
         self.sudo().action_confirm()
+        #self.sudo().picking_ids.action_pack_operation_auto_fill()
         logger.info('aca')
         return True
 

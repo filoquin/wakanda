@@ -1,0 +1,760 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wakanda_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200807\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-23 20:33+0000\n"
+"PO-Revision-Date: 2020-10-23 17:40-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_AR\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: wakanda_base
+#: model:mail.template,body_html:wakanda_base.send_confirm_code
+msgid ""
+"\n"
+"\t\t\t\n"
+"\t\t\t\t<p>Estimado cliente. Utilize este codigo de confirmacion para "
+"ingresar a la app.</p><h2>${object.partner_id.signup_token}</h2>.\n"
+"\t\t\t\t<p>Muchas Gracias</p>\n"
+"\t\t"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.actions.act_window,help:wakanda_base.product_template_action_wak
+msgid ""
+"A product can be either a physical product or a service that you sell to "
+"your customers."
+msgstr ""
+
+#. module: wakanda_base
+#: model:crm.team,name:wakanda_base.wak_app_team
+msgid "APP wakanda"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__active
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__active
+msgid "Active"
+msgstr "Avtivo"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_faq_form
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_promo_form
+msgid "Archived"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_wak_catalog_pdf
+#: model:ir.ui.menu,name:wakanda_base.wak_catalog_menu_pdf
+msgid "Catalog"
+msgstr "Catalogo"
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.product_category_action_wak
+#: model:ir.ui.menu,name:wakanda_base.menu_product_category_wak
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__wkn_app_categ_id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__wkn_app_categ_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__category_name
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__category_name
+msgid "Category name"
+msgstr "Nombre"
+
+#. module: wakanda_base
+#: model:mail.template,subject:wakanda_base.send_confirm_code
+msgid "Codigo de confirmacion ${object.name}"
+msgstr "Codigo de confirmacion ${object.name}"
+
+#. module: wakanda_base
+#: model:res.groups,name:wakanda_base.wak_group_comercio
+msgid "Comercio"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.ui.menu,name:wakanda_base.menu_website_global_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_users__wkn_confirm_code
+msgid "Confirm code"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.view_sales_order_filter_wak
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: wakanda_base
+#: model_terms:ir.actions.act_window,help:wakanda_base.product_template_action_wak
+msgid "Create a new product"
+msgstr "Plantilla de producto"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__create_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__create_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__create_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__create_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__create_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__create_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__create_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__create_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.ui.menu,name:wakanda_base.menu_orders_customers
+msgid "Customers"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.ui.menu,name:wakanda_base.menu_dashboard
+msgid "Dashboard"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__wkn_description
+msgid "Description"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__discount
+msgid "Discount"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__display_name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: wakanda_base
+#: code:addons/wakanda_base/models/sale_order.py:0
+#, python-format
+msgid "El codigo es incorrecto."
+msgstr ""
+
+#. module: wakanda_base
+#: model:res.groups,comment:wakanda_base.wak_group_comercio
+msgid "Este grupo implementa los permisos y reglas de acceso del Comercio"
+msgstr ""
+
+#. module: wakanda_base
+#: model:res.groups,comment:wakanda_base.wak_group_revendedor
+msgid "Este grupo implementa los permisos y reglas de acceso del Revendedor"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_wak_faq
+#: model:ir.ui.menu,name:wakanda_base.wak_faq_menu
+msgid "FAQS"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.ui.menu,name:wakanda_base.menu_wakanda_features
+msgid "Features"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__final_price
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__final_price
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__final_price
+msgid "Final Price"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__from_time
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__from_time
+msgid "From"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.view_sales_order_filter_wak
+msgid "From App"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order__wak_order
+msgid "From Wakanda app"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__gift_product_ids
+msgid "Gift"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__gift_discount
+msgid "Gift discount"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,help:wakanda_base.field_product_product__wak_sequence
+#: model:ir.model.fields,help:wakanda_base.field_product_template__wak_sequence
+msgid "Gives the sequence order when displaying a list of product."
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner__know_us
+#: model:ir.model.fields,field_description:wakanda_base.field_res_users__know_us
+msgid "How did you know us"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__html
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__html
+msgid "Html"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__id
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__id
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__id
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__id
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__id
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin__id
+msgid "ID"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__wkn_categ_image
+msgid "Icon"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__images_ids
+msgid "Images"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__wak_is_published
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__wak_is_published
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin__wak_is_published
+msgid "Is Published in app"
+msgstr ""
+
+#. module: wakanda_base
+#: code:addons/wakanda_base/models/sale_order.py:0
+#, python-format
+msgid "La orden no tiene la cantidad minima de productos."
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo____last_update
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__write_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__write_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__write_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__write_uid
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__write_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__write_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__write_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__write_date
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: wakanda_base
+#: model:product.pricelist,name:wakanda_base.wak_final_price_list
+msgid "Lista Final"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__month
+msgid "Month"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.view_sales_order_filter_wak
+msgid "Order Date"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_orders_wak
+#: model:ir.ui.menu,name:wakanda_base.menu_orders
+#: model:ir.ui.menu,name:wakanda_base.menu_orders_orders
+msgid "Orders"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.sale_order_action_to_invoice
+msgid "Orders To Invoice"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__attachment_ids
+msgid "PDF"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__link
+msgid "PDF Link"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__product_id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__product_id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__product_id
+msgid "Product"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__price_product_id
+msgid "Product from price"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__name
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__name
+msgid "Product name"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.product_template_action_wak
+#: model:ir.ui.menu,name:wakanda_base.menu_catalog
+#: model:ir.ui.menu,name:wakanda_base.menu_product_template_wak
+msgid "Products"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_line__promo_id
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__promo_id
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_promo_form
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_promo_tree
+msgid "Promo"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_wak_promo
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order__promo_line_ids
+#: model:ir.ui.menu,name:wakanda_base.wak_promo_menu
+msgid "Promos"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__wkn_publish
+msgid "Publish"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_delivery_carrier__is_published
+#: model_terms:ir.ui.view,arch_db:wakanda_base.view_delivery_carrier_search_inherit_wakanda_base
+msgid "Published"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__rank
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__rank
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_rank_search
+msgid "Rank"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.ui.menu,name:wakanda_base.menu_reporting
+msgid "Reporting"
+msgstr ""
+
+#. module: wakanda_base
+#: model:res.groups,name:wakanda_base.wak_group_revendedor
+msgid "Revendedor"
+msgstr ""
+
+#. module: wakanda_base
+#: model:product.pricelist,name:wakanda_base.wak_revendedor_price_list
+msgid "Revendedores"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_promo_form
+msgid "Rule"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__rule_qty
+msgid "Rule Qty"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_sale_rank
+#: model:ir.ui.menu,name:wakanda_base.sale_rank_menu
+msgid "Sale Rank"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_sale_order_promo
+msgid "Sale order promo"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_sale_rank
+msgid "Sale rank"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.act_window,name:wakanda_base.action_sale_stat
+#: model:ir.model,name:wakanda_base.model_sale_stat
+#: model:ir.ui.menu,name:wakanda_base.sale_stat_menu
+msgid "Sale stat"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_order_promo_form
+msgid "Select promo"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_delivery_carrier
+#: model:ir.ui.menu,name:wakanda_base.menu_wkanda_delivery
+msgid "Shipping Methods"
+msgstr "Métodos de envío"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner__stats_ids
+#: model:ir.model.fields,field_description:wakanda_base.field_res_users__stats_ids
+msgid "Stat"
+msgstr ""
+
+#. module: wakanda_base
+#: code:addons/wakanda_base/models/sale_order.py:0
+#, python-format
+msgid "The code %s is invalid"
+msgstr "El código %s no es válido"
+
+#. module: wakanda_base
+#: model_terms:ir.actions.act_window,help:wakanda_base.action_orders_wak
+msgid "There is no confirmed order from the website"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__name
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__name
+msgid "Title"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.view_sales_order_filter_wak
+msgid "Unpaid"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.actions.server,name:wakanda_base.ir_cron_sale_rank_ir_actions_server
+#: model:ir.cron,cron_name:wakanda_base.ir_cron_sale_rank
+#: model:ir.cron,name:wakanda_base.ir_cron_sale_rank
+msgid "Update sale rank"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__user_price
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__user_price
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__user_price
+msgid "User Price"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__wak_published
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__wak_published
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin__wak_published
+msgid "Visible on app"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__wak_sequence
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__wak_sequence
+msgid "Wak Sequence"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.module.category,name:wakanda_base.wak_ir_module_category
+#: model:ir.ui.menu,name:wakanda_base.menu_wakanda_configuration
+msgid "Wakanda"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.product_category_search_view_wak
+#: model_terms:ir.ui.view,arch_db:wakanda_base.product_template_search_view_wak
+msgid "Wakanda Published"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__wkn_app_categ_id
+msgid "Wakanda category"
+msgstr ""
+
+#. module: wakanda_base
+#: code:addons/wakanda_base/models/mixins.py:0
+#, python-format
+msgid "You do not have the rights to publish/unpublish"
+msgstr "No tiene los derechos para publicar / anular la publicación"
+
+#. module: wakanda_base
+#: model_terms:ir.actions.act_window,help:wakanda_base.sale_order_action_to_invoice
+msgid "You don't have any order to invoice from the website"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields.selection,name:wakanda_base.selection__wak_promo__rule_type__amount
+msgid "amount products"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__amount_total
+msgid "amount_total"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.product_category_form
+msgid "app"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__catalog_id
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_catalog_tree
+msgid "catalog"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__wkn_partner_id
+msgid "category own"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_catalog_form
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_faq_form
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_faq_tree
+msgid "description"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_rank_search
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_stat_search
+msgid "first 10"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_rank_search
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_stat_search
+msgid "first 5"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.wak_promo_form
+msgid "gift"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__gift_qty
+msgid "gift Qty"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__image
+msgid "image"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_product__wak_can_publish
+#: model:ir.model.fields,field_description:wakanda_base.field_product_template__wak_can_publish
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_published_mixin__wak_can_publish
+msgid "in app"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields.selection,name:wakanda_base.selection__wak_promo__rule_type__multiple_product
+msgid "multiple qyt of products"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__order_count
+msgid "order_count"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_res_partner_stat__product_uom_qty
+msgid "product_uom_qty"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_order_promo_form
+msgid "promo"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_order_promo_form
+msgid "promos"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__product_qty
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_rank__product_uom_qty
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_stat__product_uom_qty
+msgid "qty"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields.selection,name:wakanda_base.selection__wak_promo__rule_type__qty_product
+msgid "qty products"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_rank_tree
+msgid "rank"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__required_product_ids
+msgid "required product"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__rule_type
+msgid "rule type"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order_promo__order_id
+msgid "sale order"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_product_category__sequence
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog_images__sequence
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_faq__sequence
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__sequence
+msgid "sequence"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_sale_order__show_promos
+msgid "show promos"
+msgstr ""
+
+#. module: wakanda_base
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_stat_search
+#: model_terms:ir.ui.view,arch_db:wakanda_base.sale_stat_tree
+msgid "stat"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_catalog__to_time
+#: model:ir.model.fields,field_description:wakanda_base.field_wak_promo__to_time
+msgid "to"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_res_partner_stat
+msgid "view partner stats"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_wak_published_mixin
+msgid "wak Published Mixin"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_wak_catalog
+msgid "wakanda catalog"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_wak_catalog_images
+msgid "wakanda catalog images"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_wak_faq
+msgid "wakanda faqs"
+msgstr ""
+
+#. module: wakanda_base
+#: model:ir.model,name:wakanda_base.model_wak_promo
+msgid "wakanda promo"
+msgstr ""

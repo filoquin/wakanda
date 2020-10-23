@@ -1,0 +1,264 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wkorder_preparation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200807\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-23 20:34+0000\n"
+"PO-Revision-Date: 2020-10-23 17:38-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_AR\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "A Recoger"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "A producir"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "Cantidad"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "Check availability"
+msgstr "Disponibilidad"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__disp_qty
+msgid "Collect"
+msgstr "Recoger"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__line_ids
+msgid "Consolidated"
+msgstr "Consolidado"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__create_uid
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__create_date
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__display_name
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "Disponiblwe"
+msgstr "Disponible"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__date_from
+msgid "From"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__id
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__id
+msgid "ID"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation____last_update
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__write_uid
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__write_date
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__location_id
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "Mark as Done"
+msgstr "Marcar como correcto"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__move_ids
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__move_ids
+msgid "Moves"
+msgstr "Movimientos"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "Movido"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__name
+msgid "Order"
+msgstr "Orden"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__picking_ids
+msgid "Pickings"
+msgstr "Remitos"
+
+#. module: wkorder_preparation
+#: model:ir.actions.report,name:wkorder_preparation.report_order_preparation_report
+msgid "Preparacion"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__preparation_id
+msgid "Preparation"
+msgstr "Preparacion"
+
+#. module: wkorder_preparation
+#: code:addons/wkorder_preparation/models/order_preparation.py:0
+#, python-format
+msgid "Preparation require pickings"
+msgstr ""
+
+#. module: wkorder_preparation
+#: code:addons/wkorder_preparation/models/order_preparation.py:0
+#, python-format
+msgid "Preparation require product stock moves"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "Produce"
+msgstr "Producir"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.report_order_preparation
+msgid "Producto"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__product_qty
+msgid "Qty"
+msgstr "Cant"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__sequence
+msgid "Sequence"
+msgstr "Sequencia"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__qty_available
+msgid "available"
+msgstr "Disponible"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields.selection,name:wkorder_preparation.selection__order_preparation__state__cancel
+msgid "cancel"
+msgstr "Cancelar"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "description"
+msgstr "descripcion"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields.selection,name:wkorder_preparation.selection__order_preparation__state__done
+msgid "done"
+msgstr "Finalizado"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields.selection,name:wkorder_preparation.selection__order_preparation__state__draft
+msgid "draft"
+msgstr "Borrador"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "get pickings"
+msgstr "buscar Remitos"
+
+#. module: wkorder_preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "lines"
+msgstr "lineas"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__moved_qty
+msgid "moved qty"
+msgstr "Cant movida"
+
+#. module: wkorder_preparation
+#: model:ir.actions.act_window,name:wkorder_preparation.action_order_preparation
+#: model:ir.model,name:wkorder_preparation.model_order_preparation
+#: model:ir.ui.menu,name:wkorder_preparation.order_preparation_menu
+msgid "order preparation"
+msgstr "Preparacion de pedidos"
+
+#. module: wkorder_preparation
+#: model:ir.model,name:wkorder_preparation.model_order_preparation_line
+msgid "order preparation line"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields.selection,name:wkorder_preparation.selection__order_preparation__state__preparation
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_tree
+msgid "preparation"
+msgstr "Preparacion"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__production_ids
+#: model:ir.model.fields.selection,name:wkorder_preparation.selection__order_preparation__state__production
+#: model_terms:ir.ui.view,arch_db:wkorder_preparation.order_preparation_form
+msgid "production"
+msgstr "produccion"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__state
+msgid "state"
+msgstr "estado"
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation__date_to
+msgid "to"
+msgstr ""
+
+#. module: wkorder_preparation
+#: model:ir.model.fields,field_description:wkorder_preparation.field_order_preparation_line__produce_qty
+msgid "to produce"
+msgstr "Producir"

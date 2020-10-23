@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="report_order_preparation">
+			<t t-call="web.html_container">
+				<t t-call="web.internal_layout">
+					<t t-as="doc" t-foreach="docs">
+						<div class="page">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Producto</th>
+										<th>Cantidad</th>
+										<th>Disponiblwe</th>
+										<th>Movido</th>
+										<th>A producir</th>
+										<th>A Recoger</th>
+									</tr>
+								</thead>
+								<tbody class="sale_tbody">
+									<t t-as="line" t-foreach="doc.line_ids">
+										<tr>
+											<td>
+												<span t-field="line.product_id"/>
+											</td>
+											<td>
+												<span t-field="line.product_qty"/>
+											</td>
+											<td>
+												<span t-field="line.qty_available"/>
+											</td>
+											<td>
+												<span t-field="line.moved_qty"/>
+											</td>
+											<td>
+												<span t-field="line.produce_qty"/>
+											</td>
+											<td>
+												<span t-field="line.disp_qty"/>
+											</td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+		<report id="report_order_preparation_report" model="order.preparation" name="wkorder_preparation.report_order_preparation" report_type="qweb-pdf" string="Preparacion"/>
+	</data>
+</openerp>
