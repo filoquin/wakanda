@@ -156,9 +156,6 @@ class WakandaBase(http.Controller):
                 return False
         return False
 
-    @http.route(['/'], type='http', auth="none")
-    def home(self, dummie=None, dummie2=None, dummie3=None, dummie4=None, **kw):
-        return werkzeug.utils.redirect('/app')
 
     @http.route(
         ['/app',

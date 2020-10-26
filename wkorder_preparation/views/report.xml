@@ -11,7 +11,8 @@
 									<tr>
 										<th>Producto</th>
 										<th>Cantidad</th>
-										<th>Disponiblwe</th>
+										<th>Disponible</th>
+										<th>Potencial</th>
 										<th>Movido</th>
 										<th>A producir</th>
 										<th>A Recoger</th>
@@ -29,6 +30,10 @@
 											<td>
 												<span t-field="line.qty_available"/>
 											</td>
+											<td>
+												<span t-field="line.potential_qty"/>
+											</td>
+											
 											<td>
 												<span t-field="line.moved_qty"/>
 											</td>

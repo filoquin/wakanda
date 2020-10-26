@@ -53,6 +53,10 @@ class OrderPreparation(models.Model):
         'mrp.production',
         string='production',
     )
+    picking_batch_id = fields.Many2one(
+        'stock.picking.batch',
+        string='picking batch',
+    )
 
     def get_pickings(self):
         self.ensure_one()
@@ -119,8 +123,14 @@ class OrderPreparation(models.Model):
 
         vals = {}
         vals['name'] = self.env[
-          'ir.sequence'].next_by_code('order.preparation')
+            'ir.sequence'].next_by_code('order.preparation')
         vals['state'] = 'preparation'
+        picking_batch = self.env['stock.picking.batch'].create(
+            {'user_id': self.user_id.id,
+             'picking_ids': [(6, 0, self.picking_ids.ids)]}
+        )
+        vals['picking_batch_id'] = picking_batch.id
+
         self.write(vals)
 
     def action_production(self):
@@ -165,6 +175,10 @@ class OrderPreparationLine(models.Model):
         'product.product',
         string='Product',
     )
+    potential_qty = fields.Float(
+        string='potentia',
+        related='product_id.potential_qty'
+    )
     location_id = fields.Many2one(
         'stock.location',
         string='Location',
@@ -197,5 +211,3 @@ class OrderPreparationLine(models.Model):
                 if move.state == 'done':
                     moved_qty += move.product_uom_qty
             line.moved_qty = moved_qty
-
-

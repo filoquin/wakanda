@@ -28,8 +28,9 @@
             <group col="6">
               <field name="date_from"/>
               <field name="date_to"/>
-              <field name="user_id"/>
               <button name="get_pickings" states="draft" string="get pickings" type="object"/>
+              <field name="picking_batch_id"/>
+              <field name="user_id"/>
             </group>
             <group>
               <field name="picking_ids">
@@ -48,6 +49,8 @@
                     <field attrs="{'readonly':True}" name="product_id"/>
                     <field attrs="{'readonly':True}" name="product_qty"/>
                     <field attrs="{'readonly':True}" name="qty_available"/>
+                    <field attrs="{'readonly':True}" name="potential_qty"/>
+
                     <field attrs="{'readonly':True}" name="moved_qty"/>
                     <field name="produce_qty"/>
                     <field name="disp_qty"/>
@@ -56,7 +59,7 @@
               </page>
               <page attrs="{'invisible':[('state','=','draft')]}" name="production" string="production">
                 <field name="production_ids">
-                  <tree editable="bottom">
+                  <tree editable="bottom" >
 
                     <field name="company_id" invisible="True"/>
                     <field name="reservation_state" invisible="True"/>
@@ -68,10 +71,8 @@
                     <field name="product_qty"/>
                     <field name="state"/>
 
-                    <button name="action_assign" attrs="{'invisible': ['|', '|', ('is_locked', '=', False), ('state', 'in', ('draft', 'done', 'cancel')), ('reservation_state', '=', 'assigned')]}" string="Check availability" type="object" class="oe_highlight"/>
-
-                    <button name="open_produce_product" attrs="{'invisible': ['|', '|', '|', ('state', '=', 'to_close'), ('is_locked', '=', False), ('reservation_state', '!=', 'assigned'), ('routing_id', '!=', False)]}" string="Produce" type="object" class="oe_highlight"/>
-                    <button name="open_produce_product" attrs="{'invisible': ['|', '|', '|', ('state', '=', 'to_close'), ('is_locked', '=', False), ('reservation_state', 'not in', ('confirmed', 'waiting')), ('routing_id', '!=', False)]}" string="Produce" type="object"/>
+                    <button name="action_assign" attrs="{'invisible': ['|','|',('state','!=','confirmed'),('reservation_state', '!=', 'confirmed')]}" string="Check availability" type="object" class="oe_highlight"/>
+                    <button name="open_produce_product" attrs="{'invisible': ['|','|','|',('state','!=','confirmed'),('reservation_state', '!=', 'assigned'), ('routing_id', '!=', False)]}" string="Produce" type="object" class="oe_highlight"/>
 
                     <button name="button_mark_done" attrs="{'invisible': [('state', '!=', 'to_close')]}" string="Mark as Done" type="object" class="oe_highlight"/>
 
