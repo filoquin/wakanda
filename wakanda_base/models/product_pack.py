@@ -16,9 +16,10 @@ class ProductProduct(models.Model):
     def _compute_quantities_dict(
             self, lot_id, owner_id, package_id,
             from_date=False, to_date=False):
-        res = super()._compute_quantities_dict(
-            lot_id, owner_id, package_id, from_date=from_date, to_date=to_date)
         packs = self.filtered('pack_ok')
+        nopacks = self - packs
+        res = super(ProductProduct, nopacks)._compute_quantities_dict(
+            lot_id, owner_id, package_id, from_date=from_date, to_date=to_date)
         for product in packs.with_context(prefetch_fields=False):
             pack_qty_available = []
             pack_virtual_available = []
