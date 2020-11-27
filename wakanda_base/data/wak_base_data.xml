@@ -16,6 +16,26 @@
         <field name="category_id" ref="base.module_category_user_type"/>
         <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
     </record>
+    <record id="wak_group_comercio_produccion" model="res.groups">
+        <field name="name">Produccion</field>
+        <field name="category_id" ref="wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
+    </record>
+    <record id="wak_group_comercio_envasado" model="res.groups">
+        <field name="name">Envasado</field>
+        <field name="category_id" ref="wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
+    </record>
+    <record id="wak_group_comercio_preparacion" model="res.groups">
+        <field name="name">Preparacion</field>
+        <field name="category_id" ref="wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
+    </record>
+    <record id="wak_group_comercio_administrativo" model="res.groups">
+        <field name="name">Administrativo</field>
+        <field name="category_id" ref="wak_ir_module_category"/>
+        <field name="comment">Este grupo implementa los permisos y reglas de acceso del Comercio</field>
+    </record>
     <record id="wak_revendedor_price_list" model="product.pricelist">
         <field name="name">Revendedores</field>
 

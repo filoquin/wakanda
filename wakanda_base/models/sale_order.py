@@ -142,7 +142,12 @@ class SaleOrder(models.Model):
                 'max_amount', default=1)
             qty = 0
             for line in self.order_line:
-                qty += line.product_uom_qty
+                if line.product_id.pack_ok and line.product_id.pack_type == 'non_detailed':
+                    for pack_line in line.product_id.pack_line_ids:
+                        qty += pack_line.quantity * line.product_uom_qty
+
+                else:
+                    qty += line.product_uom_qty
             if qty < int(max_qty):
                 raise ValidationError(_('La orden no tiene la cantidad minima de productos.'))
 

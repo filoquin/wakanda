@@ -137,6 +137,9 @@ class OrderPreparation(models.Model):
         self.ensure_one()
         production_ids = []
         for line in self.line_ids:
+            if line.line.produce_qty > line.product_id.potential_qty:
+                raise ValidationError('No puede producir mas del potencial')
+
             if line.produce_qty > 0 and len(line.product_id.bom_id):
                 production = self.env['mrp.production'].create({
                     'product_id': line.product_id.id,
@@ -176,8 +179,9 @@ class OrderPreparationLine(models.Model):
         string='Product',
     )
     potential_qty = fields.Float(
-        string='potentia',
-        related='product_id.potential_qty'
+        string='potencial',
+        related='product_id.potential_qty',
+        store=True,
     )
     location_id = fields.Many2one(
         'stock.location',
@@ -203,6 +207,11 @@ class OrderPreparationLine(models.Model):
     disp_qty = fields.Float(
         string='Collect',
     )
+    @api.onchange('produce_qty')
+    def _onchange_produce_qty(self):
+        if self.produce_qty > self.product_id.potential_qty:
+            raise ValidationError('No puede producir mas del potencial')
+    
 
     def _compute_moved_qty(self):
         for line in self:
