@@ -137,7 +137,7 @@ class OrderPreparation(models.Model):
         self.ensure_one()
         production_ids = []
         for line in self.line_ids:
-            if line.line.produce_qty > line.product_id.potential_qty:
+            if line.produce_qty > line.product_id.potential_qty:
                 raise ValidationError('No puede producir mas del potencial')
 
             if line.produce_qty > 0 and len(line.product_id.bom_id):

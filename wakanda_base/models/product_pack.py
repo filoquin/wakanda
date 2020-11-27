@@ -1,25 +1,19 @@
 # Copyright 2019 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields
+from odoo import models
 import math
 
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
-    fake_reserve_qty = fields.Float(
-        string='Reserved',
-        comput = "compute_fake_reserve_qty|"
-    )
-
     def _compute_quantities_dict(
             self, lot_id, owner_id, package_id,
             from_date=False, to_date=False):
-        packs = self.filtered('pack_ok')
-        nopacks = self - packs
-        res = super(ProductProduct, nopacks)._compute_quantities_dict(
+        res = super()._compute_quantities_dict(
             lot_id, owner_id, package_id, from_date=from_date, to_date=to_date)
+        packs = self.filtered('pack_ok')
         for product in packs.with_context(prefetch_fields=False):
             pack_qty_available = []
             pack_virtual_available = []
@@ -36,7 +30,7 @@ class ProductProduct(models.Model):
                     pack_qty_available and min(pack_qty_available) or False),
                 'free_qty': 0,
                 'incoming_qty': 0,
-                'outgoing_qyt': 0,
+                'outgoing_qty': 0,
                 'virtual_available': (
                     pack_virtual_available and
                     min(pack_virtual_available) or False),
