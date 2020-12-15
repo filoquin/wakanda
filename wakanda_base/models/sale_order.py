@@ -23,8 +23,7 @@ class SaleOrder(models.Model):
 
     @api.model
     def wkn_create(self, lines, coupon_code=False):
-        logger.info("lines %r" %lines)
-        logger.info("coupon_code %r" %coupon_code)
+
         order_line = []
         for line in lines:
             product = self.env['product.template'].browse(line['id'])
@@ -39,6 +38,7 @@ class SaleOrder(models.Model):
         }
         order_id = self.create(order)
         order_id.checkTotal()
+        order_id.order_line.expand_pack_line()
         if coupon_code and len(coupon_code):
             res = self.wkn_apply_coupon(order_id, coupon_code)
             if 'not_found' in res:
