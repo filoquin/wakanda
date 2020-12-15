@@ -142,7 +142,7 @@ class SaleOrder(models.Model):
                 'max_amount', default=1)
             qty = 0
             for line in self.order_line:
-                if line.product_id.pack_ok and line.product_id.pack_type == 'non_detailed':
+                if line.product_id.pack_ok:# and line.product_id.pack_type == 'non_detailed'
                     for pack_line in line.product_id.pack_line_ids:
                         qty += pack_line.quantity * line.product_uom_qty
 

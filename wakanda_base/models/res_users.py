@@ -24,6 +24,11 @@ class ResUsers(models.Model):
         return access_token
 
     @api.model
+    def welcomevideo(self):
+        return self.env['ir.config_parameter'].sudo().get_param('welcomevideo','https://www.youtube.com/embed/iAPwOPzD20k')
+
+
+    @api.model
     def wkn_my_profile(self):
         user_id = self.env.user
         image = image_data_uri(
