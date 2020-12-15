@@ -38,7 +38,7 @@ class SaleOrder(models.Model):
         }
         order_id = self.create(order)
         order_id.checkTotal()
-        order_id.order_line.expand_pack_line()
+        #order_id.order_line.expand_pack_line()
         if coupon_code and len(coupon_code):
             res = self.wkn_apply_coupon(order_id, coupon_code)
             if 'not_found' in res:
