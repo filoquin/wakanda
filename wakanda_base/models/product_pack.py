@@ -43,11 +43,10 @@ class ProductPackLine(models.Model):
 
     qty_available = fields.Float(
         string='virtual_available',
-        related='product.qty_available'
+        related='product_id.qty_available'
     )
-
 
     virtual_available = fields.Float(
         string='virtual_available',
-        related='product.virtual_available'
+        related='product_id.virtual_available'
     )
