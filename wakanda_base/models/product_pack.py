@@ -1,7 +1,7 @@
 # Copyright 2019 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models
+from odoo import models, fields
 import math
 
 
@@ -38,3 +38,16 @@ class ProductProduct(models.Model):
         return res
 
 
+class ProductPackLine(models.Model):
+    _inherit = 'product.pack.line'
+
+    qty_available = fields.Float(
+        string='virtual_available',
+        related='product.qty_available'
+    )
+
+
+    virtual_available = fields.Float(
+        string='virtual_available',
+        related='product.virtual_available'
+    )

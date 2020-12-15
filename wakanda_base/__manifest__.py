@@ -45,6 +45,7 @@
         'views/sale_rank.xml',
         'views/delivery_carrier.xml',
         'views/wak_catalog.xml',
+        'views/product_pack.xml'
     ],
     'demo': [
     ],

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_pack_line_tree" inherit_id="product_pack.product_pack_line_tree" model="ir.ui.view">
+        <field name="name">product.pack.line.tree</field>
+        <field name="model">product.pack.line</field>
+        <field name="arch" type="xml">
+                <field name="quantity" position="after">
+                    <field name="qty_available"/>
+                    <field name="virtual_available"/>
+                </field>
+        </field>
+    </record>
+</odoo>
