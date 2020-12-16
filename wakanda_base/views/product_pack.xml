@@ -8,6 +8,10 @@
                 <field name="quantity" position="after">
                     <field name="qty_available"/>
                     <field name="virtual_available"/>
+                    <field name="potential_qty"/>
+                    <field name="immediately_usable_qty"/>
+                    
+
                 </field>
         </field>
     </record>

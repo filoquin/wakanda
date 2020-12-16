@@ -42,11 +42,20 @@ class ProductPackLine(models.Model):
     _inherit = 'product.pack.line'
 
     qty_available = fields.Float(
-        string='virtual_available',
+        string='qty available',
         related='product_id.qty_available'
     )
 
     virtual_available = fields.Float(
         string='virtual_available',
         related='product_id.virtual_available'
+    )
+
+    potential_qty = fields.Float(
+        string='potential',
+        related='product_id.potential_qty'
+    )
+    immediately_usable_qty = fields.Float(
+        string='virtual_available',
+        related='product_id.immediately_usable_qty'
     )
