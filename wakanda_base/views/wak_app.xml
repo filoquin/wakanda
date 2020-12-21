@@ -14,7 +14,7 @@
 			<body>
 				<app-root/>
 				<noscript>Please enable JavaScript to continue using this application.</noscript>
-				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.bdc59a1bf695e1ec6346.js"/>
+				<script defer="True" src="/wakanda_base/static/src/wakanda/runtime.ab5ee25aad390d07cd95.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/polyfills.c6e2a6493444a02edd2b.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/scripts.3e91c0b642823db265d5.js"/>
 				<script defer="True" src="/wakanda_base/static/src/wakanda/main.9130602a3dfe62e54d50.js"/>

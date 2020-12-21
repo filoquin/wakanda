@@ -48,6 +48,9 @@ class ProductCategory(models.Model):
     sequence = fields.Integer(
         string='sequence',
     )
+    list_templates = fields.Boolean(
+        string='List Templates in pricelist',
+    )
 
     def _compute_supply_categ_inverse(self):
         pass
