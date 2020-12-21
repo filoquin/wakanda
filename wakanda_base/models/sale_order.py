@@ -1,4 +1,4 @@
-from odoo import models, fields, api, _
+wkn_create odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 from math import floor
 
@@ -26,9 +26,8 @@ class SaleOrder(models.Model):
 
         order_line = []
         for line in lines:
-            product = self.env['product.template'].browse(line['id'])
-            order_line.append((0, 0, {'product_id': product.product_variant_ids[
-                              0].id, 'product_uom_qty': line['qty']}))
+            product = self.env['product.product'].browse(line['id'])
+            order_line.append((0, 0, {'product_id': product.id, 'product_uom_qty': line['qty']}))
         order = {
             'user_id': self.env.user.id,
             'partner_id': self.env.user.partner_id.id,
