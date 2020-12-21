@@ -1,4 +1,4 @@
-wkn_create odoo import models, fields, api, _
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 from math import floor
 
