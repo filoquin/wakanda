@@ -23,7 +23,7 @@ class ProductTemplate(models.Model):
     )
 
     def _compute_user_price(self):
-        prices = self._compute_user_price_no_inverse()
+        prices = self.sudo()._compute_user_price_no_inverse()
         for template in self:
             template.user_price = prices.get(template.id, 0.0)
 
@@ -45,7 +45,7 @@ class ProductTemplate(models.Model):
         return prices
 
     def _compute_final_price(self):
-        prices = self._compute_final_price_no_inverse()
+        prices = self.sudo()._compute_final_price_no_inverse()
         for template in self:
             template.final_price = prices.get(template.id, 0.0)
 
