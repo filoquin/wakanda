@@ -51,6 +51,18 @@ class ProductCategory(models.Model):
     list_templates = fields.Boolean(
         string='List Templates in pricelist',
     )
+    my_category = fields.Float(
+        string='Is my category',
+        compute='_compute_my_category',
+        search='_search_my_category'
+    )
+
+    def _compute_my_category(self):
+        for categ in self:
+            self.my_category = True if self.env.user in self.wkn_partner_id.user_ids.ids else False
+
+    def _search_my_category(self, operator, value):
+        return [('wkn_partner_id', '=', self.env.user.partner_id.id)]
 
     def _compute_supply_categ_inverse(self):
         pass
