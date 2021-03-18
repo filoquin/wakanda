@@ -64,19 +64,18 @@ class ResPartner(models.Model):
 
     def action_transform_commerce(self):
         self.user_ids.groups_id = [(3, self.env.ref(
-            'wakanda_base.wak_group_revendedor')), (4, self.env.ref('wakanda_base.wak_group_comercio'))]
+            'wakanda_base.wak_group_revendedor').id), (4, self.env.ref('wakanda_base.wak_group_comercio').id)]
 
     def action_transform_rev(self):
         self.user_ids.groups_id = [(3, self.env.ref(
-            'wakanda_base.wak_group_comercio')), (4, self.env.ref('wakanda_base.wak_group_revendedor'))]
+            'wakanda_base.wak_group_comercio').id), (4, self.env.ref('wakanda_base.wak_group_revendedor').id)]
 
     def compute_role(self):
         for record in self:
-            groups_ids = record.user_ids.mapped('groups_id').ids
-            logger.info('groups_ids %r' %groups_ids)
-            if self.env.ref('wakanda_base.wak_group_revendedor') in groups_ids:
+
+            if record.user_ids.has_group('wakanda_base.wak_group_revendedor'):
                 record.sale_role = 'revendedor'
-            elif self.env.ref('wakanda_base.wak_group_comercio') in groups_ids:
+            elif record.user_ids.has_group('wakanda_base.wak_group_comercio'):
                 record.sale_role = 'comercio'
             else:
                 record.sale_role = False
