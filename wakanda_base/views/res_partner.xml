@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="wkn_partner_form" model="ir.ui.view">
+		<field name="name">wkn_partner.form</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//page[@name='sales_purchases']" position="after">
+				<page name="wakanda" string="wakanda">
+					<group>
+						<field name="sale_role"/>
+						<field name="commerce_categ_ids" attrs="{'invisible':[('sale_role','!=','comercio')]}" widget="many2many_tags"/>
+						<button attrs="{'invisible':[('sale_role','=','comercio')]}" name="action_transform_commerce" string="Commercio" type="object"/>
+						<button attrs="{'invisible':[('sale_role','=','revendedor')]}" name="action_transform_rev" string="Revendedor" type="object"/>
+					</group>
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>

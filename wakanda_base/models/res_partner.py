@@ -25,6 +25,7 @@ class ResPartnerStat(models.Model):
         string='amount_total',
     )
 
+
     def init(self):
         tools.drop_view_if_exists(self._cr, self._table)
         self._cr.execute("""
@@ -50,3 +51,32 @@ class ResPartner(models.Model):
     know_us = fields.Text(
         string='How did you know us',
     )
+    sale_role = fields.Selection(
+        [('revendedor', 'revendedor'), ('comercio', 'comercio'), ],
+        string='Role',
+        compute='compute_role'
+    )
+    commerce_categ_ids = fields.One2many(
+         'product.category',
+         'wkn_partner_id',
+         string='Commerce category',
+     )
+
+    def action_transform_commerce(self):
+        self.user_ids.groups_id = [(3, self.env.ref(
+            'wakanda_base.wak_group_revendedor')), (4, self.env.ref('wakanda_base.wak_group_comercio'))]
+
+    def action_transform_rev(self):
+        self.user_ids.groups_id = [(3, self.env.ref(
+            'wakanda_base.wak_group_comercio')), (4, self.env.ref('wakanda_base.wak_group_revendedor'))]
+
+    def compute_role(self):
+        for record in self:
+            groups_ids = record.user_ids.mapped('groups_id').ids
+            logger.info('groups_ids %r' %groups_ids)
+            if self.env.ref('wakanda_base.wak_group_revendedor') in groups_ids:
+                record.sale_role = 'revendedor'
+            elif self.env.ref('wakanda_base.wak_group_comercio') in groups_ids:
+                record.sale_role = 'comercio'
+            else:
+                record.sale_role = False
