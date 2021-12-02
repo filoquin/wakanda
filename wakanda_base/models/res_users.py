@@ -25,8 +25,7 @@ class ResUsers(models.Model):
 
     @api.model
     def welcomevideo(self):
-        return self.env['ir.config_parameter'].sudo().get_param('welcomevideo','https://www.youtube.com/embed/iAPwOPzD20k')
-
+        return self.env['ir.config_parameter'].sudo().get_param('welcomevideo', 'https://www.youtube.com/embed/iAPwOPzD20k')
 
     @api.model
     def wkn_my_profile(self):
@@ -83,16 +82,21 @@ class ResUsers(models.Model):
         group_revendedor = self.env.ref('wakanda_base.wak_group_revendedor')
         group_public = self.env.ref('base.group_public')
         token = self.get_token()
+        partner_info = {'name':  post['completename'],
+                        'email':   post['email'],
+                        'phone': post['phone'],
+                        'street': post['address'],
+                        'birthdate_date': birthdate,
+                        'state_id': post['state_id'],
+                        'know_us': post['know_us'],
+                        }
+        if 'documento' in post and 'tipo_documento' in post:
+            partner_info['vat'] = post.get('documento').replace('.', '') 
+            tipo_documento = post.get('tipo_documento')
+            partner_info['tipo_documento'] = self.ref('l10n_ar.it_cuit').id if tipo_documento == '2' else self.ref('l10n_ar.it_dni').id
 
         new_partner = self.env['res.partner'].with_context(mail_create_nosubscribe=True).create(
-            [{'name':  post['completename'],
-              'email':   post['email'],
-              'phone': post['phone'],
-              'street': post['address'],
-              'birthdate_date':birthdate,
-              'state_id':post['state_id'],
-              'know_us':post['know_us'],
-              }]
+            [partner_info]
         )
         new_user = self.with_context(mail_create_nosubscribe=True).create(
             [{
