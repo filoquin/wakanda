@@ -91,9 +91,9 @@ class ResUsers(models.Model):
                         'know_us': post['know_us'],
                         }
         if 'documento' in post and 'tipo_documento' in post:
-            partner_info['vat'] = post.get('documento').replace('.', '') 
-            tipo_documento = post.get('tipo_documento')
-            partner_info['tipo_documento'] = self.ref('l10n_ar.it_cuit').id if tipo_documento == '2' else self.ref('l10n_ar.it_dni').id
+            partner_info['vat'] = post.get('documento') 
+            partner_info['l10n_latam_identification_type_id'] = self.env.ref('l10n_ar.it_cuit').id \
+                if post.get('tipo_documento', '1') == '2' else self.env.ref('l10n_ar.it_dni').id
 
         new_partner = self.env['res.partner'].with_context(mail_create_nosubscribe=True).create(
             [partner_info]
