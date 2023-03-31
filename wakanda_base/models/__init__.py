@@ -10,3 +10,4 @@ from . import sale_rank
 from . import delivery_carrier
 from . import wak_catalog
 from . import product_pack
+from . import wak_cheap

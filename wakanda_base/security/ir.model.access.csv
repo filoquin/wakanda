@@ -39,3 +39,5 @@
 "wakanda_base.rev_pricelist_item","rev_pricelist_item","product.model_product_pricelist_item","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_attribute_line","rev_attribute_line","product.model_product_template_attribute_line","wakanda_base.wak_group_revendedor","True","","",""
 "wakanda_base.rev_partner","Partner","base.model_res_partner","wakanda_base.wak_group_revendedor","True","True","False","False"
+"wakanda_base.rev_cheap","rev_cheap","wakanda_base.model_wak_cheap","wakanda_base.wak_group_revendedor","True","","",""
+"wakanda_base.admin_cheap","admin_cheap","wakanda_base.model_wak_cheap","sales_team.group_sale_salesman_all_leads","True","True","True","True"
