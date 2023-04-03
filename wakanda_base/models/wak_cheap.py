@@ -34,8 +34,8 @@ class WakCheap(models.Model):
     def list_cheap(self):
         return self.active_cheap().read(['name', 'sequence', 'image'])
 
-    @api.returns('wak.promo')
-    def active_promo(self):
+    @api.returns('wak.cheap')
+    def active_cheap(self):
         return self.search([
             ('from_time', '<=', fields.Datetime.now()),
             ('to_time', '>=', fields.Datetime.now())
