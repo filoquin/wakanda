@@ -29,14 +29,28 @@ class WakCheap(models.Model):
         string='Active',
         default=True
     )
+    text = fields.Html(
+        string='Texto',
+    )
+    cheap_type = fields.Selection(
+        string='Tipo',
+        selection=[
+            ('price_list', 'Price List'),
+            ('pop_up', 'Pop-up'),
+            ('home_image', 'Home Image'),
+        ],
+        default='price_list',
+)
 
     @api.model
-    def list_cheap(self):
-        return self.active_cheap().read(['name', 'sequence', 'image'])
-
-    @api.returns('wak.cheap')
-    def active_cheap(self):
-        return self.search([
+    def list_cheap(self, filter_type=None):
+        domain = [
             ('from_time', '<=', fields.Datetime.now()),
             ('to_time', '>=', fields.Datetime.now())
-        ], order='sequence', limit=1)
+        ]
+    
+        if filter_type:
+            domain.append(('cheap_type', '=', filter_type))
+    
+        active_cheap = self.search(domain, order='sequence', limit=1)
+        return active_cheap.read(['name', 'sequence', 'image', 'text'])
