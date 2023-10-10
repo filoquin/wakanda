@@ -26,7 +26,7 @@
     'author': "filoquin",
     'website': "http://www.sipecu.com.ar",
     'category': 'wakanda',
-    'version': '0.2',
+    'version': '0.3',
 
     'depends': ['sale', 'delivery', 'partner_contact_birthdate', 'product_pack'],
 
