@@ -32,6 +32,10 @@
                     <group>
                         <field name="image"/>
                     </group>
+                    <group>
+                        <field name="text"/>
+                        <field name="cheap_type"/>
+                    </group>
                 </sheet>
             </form>
         </field>
