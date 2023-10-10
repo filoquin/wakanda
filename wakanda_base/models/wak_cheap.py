@@ -40,7 +40,7 @@ class WakCheap(models.Model):
             ('home_image', 'Home Image'),
         ],
         default='price_list',
-)
+    )
 
     @api.model
     def list_cheap(self, filter_type=None):
